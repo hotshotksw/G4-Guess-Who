@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnepwp37n6wlm"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_60vx7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xqgy3"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dhxxy"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Player" type="Node3D" groups=["Player"]]
+script = ExtResource("1_60vx7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_xqgy3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.1
+delta_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_dhxxy")
