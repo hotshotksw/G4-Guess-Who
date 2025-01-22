@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://7sa6q250rb85"]
+
+[ext_resource type="Script" path="res://UI/Scripts/MainMenu.gd" id="1_delbw"]
+[ext_resource type="Texture2D" uid="uid://cueqa3n3jnkte" path="res://Assets/bkg.png" id="2_1aq36"]
+[ext_resource type="Texture2D" uid="uid://ndvm1scqheex" path="res://Assets/btn.png" id="3_bjys5"]
+[ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="4_it7hy"]
+[ext_resource type="Texture2D" uid="uid://4q2qmxbcpsv4" path="res://Assets/Round_Btn.png" id="5_fw7na"]
+[ext_resource type="Texture2D" uid="uid://dn1uii16ddk2s" path="res://Assets/Round_btn_pressed.png" id="6_a4137"]
+
+[node name="Titlescreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_delbw")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Bkg" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(577, 325.75)
+scale = Vector2(1.84026, 1.55995)
+texture = ExtResource("2_1aq36")
+
+[node name="Jcgb-yellowLRoundedBtn" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(584, 88)
+texture = ExtResource("3_bjys5")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 48.0
+offset_right = 818.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("4_it7hy")
+theme_override_font_sizes/font_size = 50
+text = "Guess Who ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 331.0
+offset_right = 812.0
+offset_bottom = 459.0
+action_mode = 0
+texture_normal = ExtResource("5_fw7na")
+texture_pressed = ExtResource("5_fw7na")
+texture_hover = ExtResource("6_a4137")
+
+[node name="Label2" type="Label" parent="Start_btn"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 482.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("4_it7hy")
+theme_override_font_sizes/font_size = 50
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rules_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 497.0
+offset_right = 527.0
+offset_bottom = 625.0
+action_mode = 0
+texture_normal = ExtResource("5_fw7na")
+texture_pressed = ExtResource("5_fw7na")
+texture_hover = ExtResource("6_a4137")
+
+[node name="Label2" type="Label" parent="Rules_btn"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 482.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("4_it7hy")
+theme_override_font_sizes/font_size = 50
+text = "Rules"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 607.0
+offset_top = 492.0
+offset_right = 1119.0
+offset_bottom = 620.0
+action_mode = 0
+texture_normal = ExtResource("5_fw7na")
+texture_pressed = ExtResource("5_fw7na")
+texture_hover = ExtResource("6_a4137")
+
+[node name="Label2" type="Label" parent="Settings_btn"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 482.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("4_it7hy")
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="Rules_btn" to="." method="_on_rules_btn_pressed"]
+[connection signal="pressed" from="Settings_btn" to="." method="_on_settings_btn_pressed"]

@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbkrqmdamkd68"]
+
+[ext_resource type="Texture2D" uid="uid://cueqa3n3jnkte" path="res://Assets/bkg.png" id="1_ktjo4"]
+[ext_resource type="Script" path="res://UI/Scripts/MainMenu.gd" id="1_w8mm3"]
+[ext_resource type="Texture2D" uid="uid://ndvm1scqheex" path="res://Assets/btn.png" id="2_fantf"]
+[ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="3_kmpl2"]
+[ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="4_alw6i"]
+[ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="5_lt477"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w8mm3")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Bkg" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(577, 325.75)
+scale = Vector2(1.84026, 1.55995)
+texture = ExtResource("1_ktjo4")
+
+[node name="Jcgb-yellowLRoundedBtn" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(584, 88)
+texture = ExtResource("2_fantf")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 48.0
+offset_right = 818.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("3_kmpl2")
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 521.0
+offset_right = 261.0
+offset_bottom = 649.0
+action_mode = 0
+texture_normal = ExtResource("4_alw6i")
+texture_pressed = ExtResource("4_alw6i")
+texture_hover = ExtResource("5_lt477")
+
+[node name="Label2" type="Label" parent="Back_btn"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 222.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("3_kmpl2")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Save_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 521.0
+offset_right = 1152.0
+offset_bottom = 649.0
+action_mode = 0
+texture_normal = ExtResource("4_alw6i")
+texture_pressed = ExtResource("4_alw6i")
+texture_hover = ExtResource("5_lt477")
+
+[node name="Label2" type="Label" parent="Save_btn"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 222.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("3_kmpl2")
+theme_override_font_sizes/font_size = 50
+text = "Save"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 268.0
+offset_right = 831.0
+offset_bottom = 375.0
+
+[connection signal="pressed" from="Back_btn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="Save_btn" to="." method="_on_save_btn_pressed"]
