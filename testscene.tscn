@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckf74i2mk2kjk"]
+[gd_scene load_steps=5 format=3 uid="uid://ckf74i2mk2kjk"]
 
 [ext_resource type="Script" path="res://SceneManager.gd" id="1_mf0bf"]
 [ext_resource type="PackedScene" uid="uid://cnepwp37n6wlm" path="res://player.tscn" id="2_em2j5"]
+[ext_resource type="Script" path="res://Scripts/enumpractice.gd" id="3_3fnkg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tap07"]
 
@@ -20,3 +21,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 1,
 
 [node name="1" type="Node3D" parent="SpawnLocations" groups=["PlayerSpawnPoint"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99444, 1.00634, 1.0021)
+
+[node name="Node3D" type="Node3D" parent="."]
+script = ExtResource("3_3fnkg")
