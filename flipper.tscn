@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvpwhah2668uo"]
+
+[ext_resource type="Script" path="res://flipper.gd" id="1_magj4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ffjr5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_26en6"]
+size = Vector3(0.208069, 0.210907, 0.207207)
+
+[node name="Flipper" type="Node3D"]
+
+[node name="Flipper" type="Node3D" parent="."]
+script = ExtResource("1_magj4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Flipper"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("BoxMesh_ffjr5")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Flipper"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Flipper/Area3D"]
+shape = SubResource("BoxShape3D_26en6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Flipper"]
+
+[connection signal="input_event" from="Flipper/Area3D" to="Flipper" method="_on_area_3d_input_event"]
