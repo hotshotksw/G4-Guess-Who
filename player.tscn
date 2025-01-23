@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnepwp37n6wlm"]
+[gd_scene load_steps=6 format=3 uid="uid://cnepwp37n6wlm"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_60vx7"]
+[ext_resource type="PackedScene" uid="uid://cr1v14ao2hj" path="res://models/Boy.glb" id="2_fgqqv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xqgy3"]
+
+[sub_resource type="Environment" id="Environment_0j7ya"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dhxxy"]
 properties/0/path = NodePath(".:position")
@@ -15,8 +18,12 @@ script = ExtResource("1_60vx7")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_xqgy3")
 
+[node name="Boy" parent="MeshInstance3D" instance=ExtResource("2_fgqqv")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 1.267, -0.08)
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -0.5)
+environment = SubResource("Environment_0j7ya")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_interval = 0.1

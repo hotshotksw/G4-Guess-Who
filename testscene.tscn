@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://SceneManager.gd" id="1_mf0bf"]
 [ext_resource type="PackedScene" uid="uid://cnepwp37n6wlm" path="res://player.tscn" id="2_em2j5"]
-[ext_resource type="Script" path="res://Scripts/enumpractice.gd" id="3_3fnkg"]
+[ext_resource type="PackedScene" uid="uid://bn3jqdamt6w4p" path="res://k_flipper.tscn" id="3_ec4bp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tap07"]
 
@@ -11,7 +11,7 @@ script = ExtResource("1_mf0bf")
 PlayerScene = ExtResource("2_em2j5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.98872, 0, 0, 0, 0.997744, 0, 0, 0, 4.98872, 0, 0, 0)
+transform = Transform3D(4.98872, 0, 0, 0, 0.997744, 0, 0, 0, 4.98872, -0.00531554, -1.19209e-07, 0.00343847)
 mesh = SubResource("BoxMesh_tap07")
 
 [node name="SpawnLocations" type="Node3D" parent="."]
@@ -22,5 +22,5 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 1,
 [node name="1" type="Node3D" parent="SpawnLocations" groups=["PlayerSpawnPoint"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99444, 1.00634, 1.0021)
 
-[node name="Node3D" type="Node3D" parent="."]
-script = ExtResource("3_3fnkg")
+[node name="flipper" parent="." instance=ExtResource("3_ec4bp")]
+transform = Transform3D(-0.93472, 0, -0.355384, 0, 1, 0, 0.355384, 0, -0.93472, 0.6559, 0.71997, -0.508161)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn3jqdamt6w4p"]
+
+[ext_resource type="PackedScene" uid="uid://beoig08oiwaaf" path="res://models/flipper.glb" id="1_7yn5q"]
+[ext_resource type="Script" path="res://flipper_image.gd" id="2_nh2n3"]
+
+[node name="flipper" instance=ExtResource("1_7yn5q")]
+script = ExtResource("2_nh2n3")
