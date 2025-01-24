@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn6jt6cc6o3un"]
+[gd_scene load_steps=6 format=3 uid="uid://bn6jt6cc6o3un"]
 
 [ext_resource type="PackedScene" uid="uid://cnepwp37n6wlm" path="res://player.tscn" id="2_js5ni"]
-[ext_resource type="PackedScene" uid="uid://bvpwhah2668uo" path="res://flipper.tscn" id="2_plw0f"]
+[ext_resource type="PackedScene" uid="uid://bn3jqdamt6w4p" path="res://k_flipper.tscn" id="3_g4wq8"]
+[ext_resource type="Environment" uid="uid://b3gi8f2weqm16" path="res://new_environment.tres" id="3_ye4iv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_32wgh"]
 
@@ -28,5 +29,32 @@ replication_config = SubResource("SceneReplicationConfig_rlwti")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97074, -1.79876)
 
-[node name="Flipper" parent="." instance=ExtResource("2_plw0f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.55019)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_ye4iv")
+
+[node name="flipper" parent="." instance=ExtResource("3_g4wq8")]
+transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 0, -0.699773, -3.68878)
+
+[node name="flipper2" parent="." instance=ExtResource("3_g4wq8")]
+transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 1.07289, -0.699773, -3.68878)
+
+[node name="flipper3" parent="." instance=ExtResource("3_g4wq8")]
+transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, -1.0635, -0.699773, -3.68878)
+
+[node name="flipper4" parent="." instance=ExtResource("3_g4wq8")]
+transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 0, -0.699773, -5.31469)
+
+[node name="flipper5" parent="." instance=ExtResource("3_g4wq8")]
+transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 1.07289, -0.699773, -5.31469)
+
+[node name="flipper6" parent="." instance=ExtResource("3_g4wq8")]
+transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, -1.0635, -0.699773, -5.31469)
+
+[node name="flipper7" parent="." instance=ExtResource("3_g4wq8")]
+transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 0, -0.699773, -6.93456)
+
+[node name="flipper8" parent="." instance=ExtResource("3_g4wq8")]
+transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 1.07289, -0.699773, -6.93456)
+
+[node name="flipper9" parent="." instance=ExtResource("3_g4wq8")]
+transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, -1.0635, -0.699773, -6.93456)

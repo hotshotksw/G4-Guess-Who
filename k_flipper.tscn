@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn3jqdamt6w4p"]
+[gd_scene load_steps=4 format=3 uid="uid://bn3jqdamt6w4p"]
 
 [ext_resource type="PackedScene" uid="uid://beoig08oiwaaf" path="res://models/flipper.glb" id="1_7yn5q"]
 [ext_resource type="Script" path="res://flipper_image.gd" id="2_nh2n3"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ipnpa"]
+size = Vector3(0.589355, 1.3252, 0.727051)
+
 [node name="flipper" instance=ExtResource("1_7yn5q")]
 script = ExtResource("2_nh2n3")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(-0.0364276, 0.0409028, 0)
+bones/0/rotation = Quaternion(0, 0, -0.0753536, 0.997157)
+
+[node name="Area3D" type="Area3D" parent="Armature/Skeleton3D" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.205, 0.373, 0)
+shape = SubResource("BoxShape3D_ipnpa")
+
+[connection signal="input_event" from="Armature/Skeleton3D/Area3D" to="." method="_on_area_3d_input_event"]
