@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cnepwp37n6wlm"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_60vx7"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_60vx7"]
 [ext_resource type="PackedScene" uid="uid://cr1v14ao2hj" path="res://models/Boy.glb" id="2_fgqqv"]
 [ext_resource type="PackedScene" uid="uid://2eub3abg1ftp" path="res://UI/Scenes/FirstPersonHud.tscn" id="3_1k8ml"]
 
