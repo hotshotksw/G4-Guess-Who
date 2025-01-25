@@ -14,9 +14,10 @@ func _ready() -> void:
 				currentPlayer.global_position = spawn.global_position
 				currentPlayer.global_rotation = spawn.global_rotation
 		index += 1
-	pass # Replace with function body.
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+	#pass

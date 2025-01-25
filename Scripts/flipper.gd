@@ -4,6 +4,8 @@ extends Node3D
 var open = true
 @onready var anim_player = $AnimationPlayer
 
+#@export var stuff = Characteristics.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var image = texture.get_image()
