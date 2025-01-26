@@ -13,6 +13,7 @@ func _ready() -> void:
 	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
 		camera.make_current()
 	
+	print(multiplayer.get_unique_id())
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
