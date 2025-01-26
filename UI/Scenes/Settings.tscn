@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cueqa3n3jnkte" path="res://Assets/bkg.png" id="1_ktjo4"]
 [ext_resource type="Script" path="res://UI/Scripts/MainMenu.gd" id="1_w8mm3"]
-[ext_resource type="Texture2D" uid="uid://ndvm1scqheex" path="res://Assets/btn.png" id="2_fantf"]
+[ext_resource type="Texture2D" uid="uid://bgvxfj8j7ejdf" path="res://Assets/btn.png" id="2_fantf"]
 [ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="3_kmpl2"]
 [ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="4_alw6i"]
 [ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="5_lt477"]
@@ -100,12 +100,62 @@ text = "Save"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="Volume" type="HSlider" parent="."]
 layout_mode = 0
 offset_left = 344.0
 offset_top = 268.0
 offset_right = 831.0
 offset_bottom = 375.0
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_w8mm3")
 
+[node name="Label2" type="Label" parent="Volume"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -75.0
+offset_right = 477.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("3_kmpl2")
+theme_override_font_sizes/font_size = 50
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 440.0
+offset_right = 844.0
+offset_bottom = 547.0
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_w8mm3")
+
+[node name="Label2" type="Label" parent="SFX"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -75.0
+offset_right = 477.0
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("3_kmpl2")
+theme_override_font_sizes/font_size = 50
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="Back_btn" to="." method="_on_back_btn_pressed"]
 [connection signal="pressed" from="Save_btn" to="." method="_on_save_btn_pressed"]
+[connection signal="value_changed" from="Volume" to="." method="_on_volume_value_changed"]
+[connection signal="value_changed" from="SFX" to="." method="_on_sfx_value_changed"]

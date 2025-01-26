@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://wjrii7gvqw8w"]
+
+[ext_resource type="Script" path="res://UI/Scripts/MainMenu.gd" id="1_fm57e"]
+[ext_resource type="AudioStream" uid="uid://ulgef47mjee3" path="res://Assets/mind-on-the-game-254624.mp3" id="1_hpukv"]
+[ext_resource type="AudioStream" uid="uid://bed6uxs1vlxo5" path="res://Assets/btn.wav" id="3_64co4"]
+[ext_resource type="AudioStream" uid="uid://d2d35d33jmeo6" path="res://Assets/save.wav" id="4_gc1ql"]
+
+[node name="AudioLoader" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fm57e")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(509, 263)
+stream = ExtResource("1_hpukv")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="SFX_save" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(696, 329)
+stream = ExtResource("4_gc1ql")
+bus = &"SFX"
+
+[node name="SFX_btn" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(686, 264)
+stream = ExtResource("3_64co4")
+volume_db = 12.0
+bus = &"SFX"

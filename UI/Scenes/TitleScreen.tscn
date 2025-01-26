@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/Scripts/MainMenu.gd" id="1_delbw"]
 [ext_resource type="Texture2D" uid="uid://cueqa3n3jnkte" path="res://Assets/bkg.png" id="2_1aq36"]
-[ext_resource type="Texture2D" uid="uid://ndvm1scqheex" path="res://Assets/btn.png" id="3_bjys5"]
+[ext_resource type="Texture2D" uid="uid://bgvxfj8j7ejdf" path="res://Assets/btn.png" id="3_bjys5"]
 [ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="4_it7hy"]
 [ext_resource type="Texture2D" uid="uid://4q2qmxbcpsv4" path="res://Assets/Round_Btn.png" id="5_fw7na"]
 [ext_resource type="Texture2D" uid="uid://dn1uii16ddk2s" path="res://Assets/Round_btn_pressed.png" id="6_a4137"]
@@ -47,9 +47,9 @@ vertical_alignment = 1
 [node name="Start_btn" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 300.0
-offset_top = 331.0
+offset_top = 301.0
 offset_right = 812.0
-offset_bottom = 459.0
+offset_bottom = 429.0
 action_mode = 0
 texture_normal = ExtResource("5_fw7na")
 texture_pressed = ExtResource("5_fw7na")
