@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_m1i8e")
 
 [node name="Ask" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -47,15 +48,16 @@ script = ExtResource("2_hylm8")
 
 [node name="Ask_btn" type="TextureButton" parent="Ask"]
 layout_mode = 0
-offset_left = 813.0
-offset_top = 143.0
-offset_right = 1069.0
-offset_bottom = 271.0
+offset_left = 892.0
+offset_top = 142.0
+offset_right = 1148.0
+offset_bottom = 270.0
 disabled = true
 action_mode = 0
 texture_normal = ExtResource("3_hncth")
 texture_pressed = ExtResource("3_hncth")
 texture_hover = ExtResource("4_dxt15")
+script = ExtResource("1_m1i8e")
 
 [node name="btn" type="Label" parent="Ask/Ask_btn"]
 layout_mode = 0
@@ -127,4 +129,5 @@ vertical_alignment = 1
 
 [connection signal="item_selected" from="Ask/Topic" to="Ask/Topic" method="_on_item_selected"]
 [connection signal="item_selected" from="Ask/Topic/Filter" to="Ask/Topic" method="_on_filter_item_selected"]
+[connection signal="pressed" from="Ask/Ask_btn" to="Ask" method="_on_ask_btn_pressed"]
 [connection signal="pressed" from="toggle/Question_btn" to="." method="_on_question_btn_pressed"]

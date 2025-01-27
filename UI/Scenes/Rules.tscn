@@ -126,34 +126,4 @@ text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = 211.0
-offset_top = 155.0
-offset_right = 1001.0
-offset_bottom = 524.0
-theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
-theme_override_constants/outline_size = 2
-theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("3_nabvg")
-theme_override_font_sizes/font_size = 0
-text = "Start -
-Enter your name.
-Choose Host to or join to either create or Join a sever.
-Once ready, click Start Game to begin.
-
-Gameplay Overview -
-You can move your head and left click to lower faces on the board to eliminate possibilities. (right click to gues)
-
-Asking Questions -
-Press the Question button.
-Use the displayed list items to build your question.
-Submit your question to receive a Yes or No
-.
-Objective -
-Deduce your opponent's character by asking strategic questions and eliminating options on your board."
-autowrap_mode = 3
-
 [connection signal="pressed" from="Back_btn" to="." method="_on_back_btn_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://osv16hswt1ud"]
+[gd_scene load_steps=6 format=3 uid="uid://c2i4jspd3pywh"]
 
-[ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="1_fop48"]
-[ext_resource type="Script" path="res://UI/Scripts/ask.gd" id="1_qqcdp"]
-[ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="2_flmye"]
-[ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="3_iei6e"]
+[ext_resource type="Script" path="res://UI/Scripts/GameUI.gd" id="1_m1i8e"]
+[ext_resource type="Script" path="res://UI/Scripts/ask.gd" id="2_hylm8"]
+[ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="3_hncth"]
+[ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="4_dxt15"]
+[ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="5_eb7vn"]
 
 [node name="QuestionUi" type="Control"]
 layout_mode = 3
@@ -12,43 +13,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m1i8e")
 
-[node name="Topic" type="ItemList" parent="."]
+[node name="Ask" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_m1i8e")
+
+[node name="Topic" type="ItemList" parent="Ask"]
 layout_mode = 0
-offset_left = 188.0
-offset_top = 212.0
-offset_right = 421.0
-offset_bottom = 357.0
+offset_left = 34.0
+offset_top = 61.0
+offset_right = 267.0
+offset_bottom = 206.0
 item_count = 5
 item_0/text = "Gender"
 item_1/text = "Hair Color"
 item_2/text = "Eye Color"
 item_3/text = "Accessories"
 item_4/text = "Facial Hair"
-script = ExtResource("1_qqcdp")
+script = ExtResource("2_hylm8")
 
-[node name="Filter" type="ItemList" parent="Topic"]
+[node name="Filter" type="ItemList" parent="Ask/Topic"]
 top_level = true
 layout_mode = 0
-offset_left = 474.0
-offset_top = 211.0
-offset_right = 710.0
-offset_bottom = 356.0
-script = ExtResource("1_qqcdp")
+offset_left = 287.0
+offset_top = 61.0
+offset_right = 523.0
+offset_bottom = 206.0
+script = ExtResource("2_hylm8")
 
-[node name="Ask_btn" type="TextureButton" parent="."]
+[node name="Ask_btn" type="TextureButton" parent="Ask"]
 layout_mode = 0
-offset_left = 896.0
-offset_top = 521.0
-offset_right = 1152.0
-offset_bottom = 649.0
+offset_left = 892.0
+offset_top = 142.0
+offset_right = 1148.0
+offset_bottom = 270.0
 disabled = true
 action_mode = 0
-texture_normal = ExtResource("1_fop48")
-texture_pressed = ExtResource("1_fop48")
-texture_hover = ExtResource("2_flmye")
+texture_normal = ExtResource("3_hncth")
+texture_pressed = ExtResource("3_hncth")
+texture_hover = ExtResource("4_dxt15")
+script = ExtResource("1_m1i8e")
 
-[node name="Label2" type="Label" parent="Ask_btn"]
+[node name="btn" type="Label" parent="Ask/Ask_btn"]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 24.0
@@ -59,45 +70,64 @@ theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
 theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 50
-theme_override_fonts/font = ExtResource("3_iei6e")
+theme_override_fonts/font = ExtResource("5_eb7vn")
 theme_override_font_sizes/font_size = 50
 text = "Ask
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Question" type="Label" parent="Ask_btn"]
+[node name="Question" type="Label" parent="Ask"]
 layout_mode = 0
-offset_left = -631.0
-offset_top = 16.0
-offset_right = -174.0
-offset_bottom = 83.0
+offset_left = 46.0
+offset_top = 229.0
+offset_right = 503.0
+offset_bottom = 296.0
 theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
 theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 50
-theme_override_fonts/font = ExtResource("3_iei6e")
+theme_override_fonts/font = ExtResource("5_eb7vn")
 theme_override_font_sizes/font_size = 24
-text = "Is your Character M/f ?"
+text = "Is your Character ..."
 vertical_alignment = 1
 
-[node name="Question2" type="Label" parent="Ask_btn"]
+[node name="toggle" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+script = ExtResource("1_m1i8e")
+
+[node name="Question_btn" type="TextureButton" parent="toggle"]
 layout_mode = 0
-offset_left = -569.0
-offset_top = -466.0
-offset_right = -154.0
-offset_bottom = -399.0
-theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+offset_left = 5.0
+offset_top = 514.0
+offset_right = 261.0
+offset_bottom = 642.0
+texture_normal = ExtResource("3_hncth")
+texture_pressed = ExtResource("3_hncth")
+texture_hover = ExtResource("4_dxt15")
+script = ExtResource("1_m1i8e")
+
+[node name="Label" type="Label" parent="toggle/Question_btn"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 36.0
+offset_right = 216.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
-theme_override_constants/outline_size = 5
-theme_override_constants/shadow_outline_size = 50
-theme_override_fonts/font = ExtResource("3_iei6e")
-theme_override_font_sizes/font_size = 50
-text = "Your Turn"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 24
+theme_override_fonts/font = ExtResource("5_eb7vn")
+theme_override_font_sizes/font_size = 25
+text = "Question"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="item_selected" from="Topic" to="Topic" method="_on_item_selected"]
-[connection signal="item_selected" from="Topic/Filter" to="Ask_btn" method="_on_filter_item_selected"]
+[connection signal="item_selected" from="Ask/Topic" to="Ask/Topic" method="_on_item_selected"]
+[connection signal="item_selected" from="Ask/Topic/Filter" to="Ask/Topic" method="_on_filter_item_selected"]
+[connection signal="pressed" from="Ask/Ask_btn" to="Ask" method="_on_ask_btn_pressed"]
+[connection signal="pressed" from="toggle/Question_btn" to="." method="_on_question_btn_pressed"]

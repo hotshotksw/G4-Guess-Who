@@ -7,6 +7,8 @@ extends Node3D
 var x_sensitivity = 0.01 as float
 var y_sensitivity = 0.01 as float
 
+var usingUI = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
@@ -22,6 +24,8 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id():
 		return
+	
+	if(Input.is_key_pressed(KEY_SHIFT)): usingUI = !usingUI
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
@@ -46,7 +50,7 @@ func _input(event: InputEvent) -> void:
 		elif event.is_action_pressed("ui_cancel"):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-	elif Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+	elif Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE and usingUI == false:
 		if event is InputEventMouseButton and event.pressed:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 

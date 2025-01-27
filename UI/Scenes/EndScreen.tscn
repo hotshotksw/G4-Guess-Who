@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://duqcwoe5vqche"]
 
 [ext_resource type="Texture2D" uid="uid://ckjwujc7s6vqt" path="res://Assets/win.PNG" id="1_dk3c3"]
-[ext_resource type="Texture2D" uid="uid://ndvm1scqheex" path="res://Assets/btn.png" id="1_s01s3"]
+[ext_resource type="Texture2D" uid="uid://bgvxfj8j7ejdf" path="res://Assets/btn.png" id="1_s01s3"]
 [ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="2_aeno1"]
 [ext_resource type="Texture2D" uid="uid://y8efknococcn" path="res://Assets/lose.PNG" id="4_nkk7c"]
 

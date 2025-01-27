@@ -4,7 +4,7 @@ var char = Characteristics.new()
 var filter;
 var itm;
 var fltr;
-var search = [null, null];
+var search = GameManager.questionChar;
 
 func _ready() -> void:
 	filter = get_child(0);
