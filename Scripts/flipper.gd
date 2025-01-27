@@ -6,7 +6,7 @@ var open = true
 @onready var synchronizer = $MultiplayerSynchronizer
 @onready var characteristics = $Flipper_Characteristics
 
-signal guess(player_id: int, image: Image)
+signal guess(player_id: int, image_path: String)
 
 #@export var stuff = Characteristics.new()
 
@@ -18,7 +18,6 @@ func _ready() -> void:
 	var mat = StandardMaterial3D.new()
 	mat.albedo_texture = texture
 	$Armature/Skeleton3D/Cylinder.set_surface_override_material(1, mat)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,8 +31,7 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 					rpc("flip_object")
 
 				elif event.button_index == MOUSE_BUTTON_MASK_RIGHT and open:
-					Signalbus.guess_character.emit(multiplayer.get_unique_id(), texture.get_image())
-					print('Are you sure you want to guess them?')
+					GameManager.player_guess(multiplayer.get_unique_id())
 
 			else:
 				print("You do not have authority to interact with this object.")

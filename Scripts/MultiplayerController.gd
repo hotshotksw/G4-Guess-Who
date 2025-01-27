@@ -48,7 +48,7 @@ func SendPlayerInformation(name, id):
 			"name": name,
 			"id": id
 		}
-	
+
 	if multiplayer.is_server():
 		for i in GameManager.Players:
 			SendPlayerInformation.rpc(GameManager.Players[i].name, i)
@@ -67,7 +67,7 @@ func host_game():
 		print("Cannot host: " + error)
 		return
 	peer.get_host().compress(ENetConnection.COMPRESS_RANGE_CODER)
-	
+
 	multiplayer.set_multiplayer_peer(peer)
 	print("Waiting for Players!")
 
