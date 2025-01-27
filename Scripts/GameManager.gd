@@ -3,6 +3,7 @@ extends Node
 var Players = []
 var current_turn = 0
 var images = []
+var questionChar = [null, null]
 
 func _ready():
 	images = [
@@ -27,7 +28,10 @@ func add_player(name, id):
 func player_guess(player_id):
 	pass
 
-func ask_question(player_id):
+func ask_question(key, value):
+	print(key)
+	print(value)
+	advance_turn()
 	pass
 
 func advance_turn():

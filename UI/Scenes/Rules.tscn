@@ -25,13 +25,13 @@ position = Vector2(577, 325.75)
 scale = Vector2(1.84026, 1.55995)
 texture = ExtResource("1_g54q6")
 
-[node name="Btn" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(579, 352)
-scale = Vector2(1.48047, 3.25781)
+[node name="Jcgb-yellowLRoundedBtn" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(584, 77)
 texture = ExtResource("2_xd8fc")
 
-[node name="bk" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(584, 88)
+[node name="Jcgb-yellowLRoundedBtn2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(590, 348.5)
+scale = Vector2(1.6543, 3.32031)
 texture = ExtResource("2_xd8fc")
 
 [node name="BoxContainer" type="BoxContainer" parent="CanvasGroup"]
@@ -47,18 +47,11 @@ custom_minimum_size = Vector2(680, 350)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -227.0
-offset_top = -275.0
-offset_right = 233.0
-offset_bottom = -208.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 454.0
+offset_top = 39.0
+offset_right = 708.0
+offset_bottom = 106.0
 theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
@@ -103,10 +96,10 @@ autowrap_mode = 3
 
 [node name="Back_btn" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 521.0
-offset_right = 261.0
-offset_bottom = 649.0
+offset_left = -1.0
+offset_top = 525.0
+offset_right = 255.0
+offset_bottom = 653.0
 action_mode = 0
 texture_normal = ExtResource("4_s3mvr")
 texture_pressed = ExtResource("4_s3mvr")
