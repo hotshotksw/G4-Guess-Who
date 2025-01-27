@@ -4,6 +4,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioLoader.play_music("Scene2")
 	var index = 0
 	for player_data in GameManager.Players:
 		var currentPlayer = PlayerScene.instantiate()

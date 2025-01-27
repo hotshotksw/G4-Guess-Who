@@ -76,12 +76,14 @@ func host_game():
 	print("Waiting for Players!")
 
 func _on_host_button_down() -> void:
+	AudioLoader.play_sound("save")
 	host_game()
 	SendPlayerInformation($LineEdit.text, multiplayer.get_unique_id())
 	pass # Replace with function body.
 
 
 func _on_join_button_down() -> void:
+	AudioLoader.play_sound("btn")
 	peer = ENetMultiplayerPeer.new()
 	peer.create_client(Address, port)
 	peer.get_host().compress(ENetConnection.COMPRESS_RANGE_CODER)
@@ -92,5 +94,6 @@ func _on_join_button_down() -> void:
 
 func _on_start_game_button_down() -> void:
 	if gameReady:
+		AudioLoader.play_sound("btn")
 		StartGame.rpc()
 	pass # Replace with function body.

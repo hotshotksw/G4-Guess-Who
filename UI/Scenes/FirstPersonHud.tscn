@@ -1,10 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://2eub3abg1ftp"]
+[gd_scene load_steps=2 format=3 uid="uid://2eub3abg1ftp"]
 
-[ext_resource type="Script" path="res://UI/Scripts/MainMenu.gd" id="1_kdgup"]
 [ext_resource type="Texture2D" uid="uid://c1qalfllixvd2" path="res://Assets/CrosshairDot.png" id="1_t1wnf"]
-[ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="2_t8317"]
-[ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="3_c1qwl"]
-[ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="4_t1giy"]
 
 [sub_resource type="GDScript" id="GDScript_ekabi"]
 script/source = "extends TextureRect
@@ -22,7 +18,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_kdgup")
 
 [node name="Crosshair" type="TextureRect" parent="."]
 layout_mode = 1
@@ -42,51 +37,3 @@ pivot_offset = Vector2(50, 50)
 texture = ExtResource("1_t1wnf")
 expand_mode = 1
 stretch_mode = 3
-
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 898.0
-offset_top = 521.0
-offset_right = 1154.0
-offset_bottom = 649.0
-texture_normal = ExtResource("2_t8317")
-texture_pressed = ExtResource("2_t8317")
-texture_hover = ExtResource("3_c1qwl")
-script = ExtResource("1_kdgup")
-
-[node name="Label2" type="Label" parent="TextureButton"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = -103.0
-offset_right = 225.0
-offset_bottom = -36.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
-theme_override_constants/outline_size = 5
-theme_override_constants/shadow_outline_size = 50
-theme_override_fonts/font = ExtResource("4_t1giy")
-theme_override_font_sizes/font_size = 50
-text = "Quit"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CharImage" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -167.0
-offset_top = 28.0
-offset_right = -27.0
-offset_bottom = 240.0
-grow_horizontal = 0
-expand_mode = 1
-stretch_mode = 5
-script = SubResource("GDScript_ekabi")
-
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
