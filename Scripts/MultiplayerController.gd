@@ -27,6 +27,7 @@ func peer_connected(id):
 
 # Called on the server and client
 func peer_disconnected(id):
+	gameReady = false
 	print("Player Disconnected " + str(id))
 	GameManager.Players.erase(id)
 	var players = get_tree().get_nodes_in_group("Player")
