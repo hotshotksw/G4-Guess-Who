@@ -1,60 +1,61 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn6jt6cc6o3un"]
+[gd_scene load_steps=7 format=3 uid="uid://bn6jt6cc6o3un"]
 
-[ext_resource type="PackedScene" uid="uid://cnepwp37n6wlm" path="res://player.tscn" id="2_js5ni"]
+[ext_resource type="Texture2D" uid="uid://cdvov8b0fvq1j" path="res://Assets/Stylized Sky BG (55).png" id="1_2yeb1"]
+[ext_resource type="PackedScene" uid="uid://cnepwp37n6wlm" path="res://player.tscn" id="3_6po62"]
 [ext_resource type="PackedScene" uid="uid://bn3jqdamt6w4p" path="res://k_flipper.tscn" id="3_g4wq8"]
-[ext_resource type="Environment" uid="uid://b3gi8f2weqm16" path="res://new_environment.tres" id="3_ye4iv"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_32wgh"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uh2hj"]
+panorama = ExtResource("1_2yeb1")
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rlwti"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
+[sub_resource type="Sky" id="Sky_bv22l"]
+sky_material = SubResource("PanoramaSkyMaterial_uh2hj")
+
+[sub_resource type="Environment" id="Environment_h5lmf"]
+background_mode = 2
+sky = SubResource("Sky_bv22l")
 
 [node name="Flippertest" type="Node3D"]
-
-[node name="Player" parent="." instance=ExtResource("2_js5ni")]
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_32wgh")
-
-[node name="Camera3D2" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="MultiplayerSynchronizer2" type="MultiplayerSynchronizer" parent="Player"]
-replication_interval = 0.1
-delta_interval = 0.1
-replication_config = SubResource("SceneReplicationConfig_rlwti")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97074, -1.79876)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("3_ye4iv")
+environment = SubResource("Environment_h5lmf")
 
 [node name="flipper" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 0, -0.699773, -3.68878)
+texture = null
 
 [node name="flipper2" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 1.07289, -0.699773, -3.68878)
+texture = null
 
 [node name="flipper3" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, -1.0635, -0.699773, -3.68878)
+texture = null
 
 [node name="flipper4" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 0, -0.699773, -5.31469)
+texture = null
 
 [node name="flipper5" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 1.07289, -0.699773, -5.31469)
+texture = null
 
 [node name="flipper6" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, -1.0635, -0.699773, -5.31469)
+texture = null
 
 [node name="flipper7" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 0, -0.699773, -6.93456)
+texture = null
 
 [node name="flipper8" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 1.07289, -0.699773, -6.93456)
+texture = null
 
 [node name="flipper9" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, -1.0635, -0.699773, -6.93456)
+texture = null
+
+[node name="Player" parent="." instance=ExtResource("3_6po62")]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cueqa3n3jnkte" path="res://Assets/bkg.png" id="1_g54q6"]
 [ext_resource type="Script" path="res://UI/Scripts/MainMenu.gd" id="1_ot840"]
-[ext_resource type="Texture2D" uid="uid://ndvm1scqheex" path="res://Assets/btn.png" id="2_xd8fc"]
+[ext_resource type="Texture2D" uid="uid://bgvxfj8j7ejdf" path="res://Assets/btn.png" id="2_xd8fc"]
 [ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="3_nabvg"]
 [ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="4_s3mvr"]
 [ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="5_wuk3d"]
@@ -14,6 +14,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 script = ExtResource("1_ot840")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
@@ -32,6 +34,18 @@ position = Vector2(590, 348.5)
 scale = Vector2(1.6543, 3.32031)
 texture = ExtResource("2_xd8fc")
 
+[node name="BoxContainer" type="BoxContainer" parent="CanvasGroup"]
+offset_left = 242.0
+offset_top = 161.0
+offset_right = 242.0
+offset_bottom = 161.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasGroup/BoxContainer"]
+custom_minimum_size = Vector2(680, 350)
+layout_mode = 2
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 454.0
@@ -49,6 +63,37 @@ text = "Rules"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 168.0
+offset_right = 929.0
+offset_bottom = 500.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("3_nabvg")
+theme_override_font_sizes/font_size = 13
+text = "To Start -
+First click start and Enter your name.
+Then Choose Host or Join to either create a server or join one.
+Once ready, click Start Game to begin.
+
+Gameplay Overview -
+Players take turns automatically.
+You can move your head and click to lower faces on the board eliminating possibilities.
+
+Asking Questions-
+Press the Question button.
+Use the displayed list items to select and build your question.
+Submit your question to receive a Yes or No answer.
+
+Objective -
+Deduce your opponent's character by asking strategic questions and eliminating options."
+autowrap_mode = 3
+
 [node name="Back_btn" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = -1.0
@@ -61,11 +106,15 @@ texture_pressed = ExtResource("4_s3mvr")
 texture_hover = ExtResource("5_wuk3d")
 
 [node name="Label2" type="Label" parent="Back_btn"]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 24.0
-offset_right = 222.0
-offset_bottom = 91.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -104.0
+offset_right = 230.0
+offset_bottom = -37.0
+grow_vertical = 0
 theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)

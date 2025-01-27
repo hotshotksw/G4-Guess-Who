@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://osv16hswt1ud"]
+
+[ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="1_fop48"]
+[ext_resource type="Script" path="res://UI/Scripts/ask.gd" id="1_qqcdp"]
+[ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="2_flmye"]
+[ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="3_iei6e"]
+
+[node name="QuestionUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Topic" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 212.0
+offset_right = 421.0
+offset_bottom = 357.0
+item_count = 5
+item_0/text = "Gender"
+item_1/text = "Hair Color"
+item_2/text = "Eye Color"
+item_3/text = "Accessories"
+item_4/text = "Facial Hair"
+script = ExtResource("1_qqcdp")
+
+[node name="Filter" type="ItemList" parent="Topic"]
+top_level = true
+layout_mode = 0
+offset_left = 474.0
+offset_top = 211.0
+offset_right = 710.0
+offset_bottom = 356.0
+script = ExtResource("1_qqcdp")
+
+[node name="Ask_btn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 521.0
+offset_right = 1152.0
+offset_bottom = 649.0
+disabled = true
+action_mode = 0
+texture_normal = ExtResource("1_fop48")
+texture_pressed = ExtResource("1_fop48")
+texture_hover = ExtResource("2_flmye")
+
+[node name="Label2" type="Label" parent="Ask_btn"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 222.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("3_iei6e")
+theme_override_font_sizes/font_size = 50
+text = "Ask
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Question" type="Label" parent="Ask_btn"]
+layout_mode = 0
+offset_left = -631.0
+offset_top = 16.0
+offset_right = -174.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("3_iei6e")
+theme_override_font_sizes/font_size = 24
+text = "Is your Character M/f ?"
+vertical_alignment = 1
+
+[node name="Question2" type="Label" parent="Ask_btn"]
+layout_mode = 0
+offset_left = -569.0
+offset_top = -466.0
+offset_right = -154.0
+offset_bottom = -399.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("3_iei6e")
+theme_override_font_sizes/font_size = 50
+text = "Your Turn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="item_selected" from="Topic" to="Topic" method="_on_item_selected"]
+[connection signal="item_selected" from="Topic/Filter" to="Ask_btn" method="_on_filter_item_selected"]

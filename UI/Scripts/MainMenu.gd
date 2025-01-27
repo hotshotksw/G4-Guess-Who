@@ -1,7 +1,7 @@
 extends Control
 
-var changeSFX
 var changeVol
+var changeSFX
 
 var change = 1
 

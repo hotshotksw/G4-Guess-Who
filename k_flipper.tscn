@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn3jqdamt6w4p"]
+[gd_scene load_steps=7 format=3 uid="uid://bn3jqdamt6w4p"]
 
 [ext_resource type="PackedScene" uid="uid://beoig08oiwaaf" path="res://models/flipper.glb" id="1_7yn5q"]
 [ext_resource type="Script" path="res://Scripts/flipper.gd" id="2_nh2n3"]
 [ext_resource type="Script" path="res://Scripts/characteristics.gd" id="3_5get6"]
+[ext_resource type="PackedScene" uid="uid://dmyu4qglqmjjs" path="res://Pillar.glb" id="4_rc57h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ipnpa"]
 size = Vector3(0.589355, 1.3252, 0.727051)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_41tpj"]
+
 [node name="flipper" instance=ExtResource("1_7yn5q")]
 script = ExtResource("2_nh2n3")
+texture = null
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/position = Vector3(-0.0364276, 0.0409028, 0)
@@ -20,7 +24,13 @@ bones/0/rotation = Quaternion(0, 0, -0.0753536, 0.997157)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.205, 0.373, 0)
 shape = SubResource("BoxShape3D_ipnpa")
 
-[node name="Flipper_Characteristics" type="Node" parent="." index="2"]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="2"]
+replication_config = SubResource("SceneReplicationConfig_41tpj")
+
+[node name="Flipper_Characteristics" type="Node" parent="." index="3"]
 script = ExtResource("3_5get6")
+
+[node name="Pillar" parent="." index="4" instance=ExtResource("4_rc57h")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.17507, -2.24828, 0)
 
 [connection signal="input_event" from="Armature/Skeleton3D/Area3D" to="." method="_on_area_3d_input_event"]

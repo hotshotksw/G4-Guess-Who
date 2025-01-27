@@ -1,6 +1,5 @@
 extends ItemList
 
-
 var char = Characteristics.new()
 var filter;
 var itm;
