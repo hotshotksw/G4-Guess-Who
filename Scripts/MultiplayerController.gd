@@ -3,6 +3,7 @@ extends Control
 @export var Address = "127.0.0.1"
 @export var port = 8910
 var peer
+var gameReady = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +22,7 @@ func _process(delta: float) -> void:
 
 # Called on the server and client
 func peer_connected(id):
+	gameReady = true
 	print("Player Connected " + str(id))
 
 # Called on the server and client
@@ -88,5 +90,6 @@ func _on_join_button_down() -> void:
 
 
 func _on_start_game_button_down() -> void:
-	StartGame.rpc()
+	if gameReady:
+		StartGame.rpc()
 	pass # Replace with function body.
