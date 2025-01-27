@@ -100,12 +100,62 @@ text = "Save"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="Volume" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 344.0
-offset_top = 268.0
-offset_right = 831.0
-offset_bottom = 375.0
+offset_left = 347.0
+offset_top = 257.0
+offset_right = 834.0
+offset_bottom = 364.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_w8mm3")
 
+[node name="Label3" type="Label" parent="Volume"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = -68.0
+offset_right = 378.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("3_kmpl2")
+theme_override_font_sizes/font_size = 50
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 431.0
+offset_right = 839.0
+offset_bottom = 538.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_w8mm3")
+
+[node name="Label4" type="Label" parent="sfx"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = -48.0
+offset_right = 374.0
+offset_bottom = 19.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("3_kmpl2")
+theme_override_font_sizes/font_size = 50
+text = "sfx"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="Back_btn" to="." method="_on_back_btn_pressed"]
 [connection signal="pressed" from="Save_btn" to="." method="_on_save_btn_pressed"]
+[connection signal="value_changed" from="Volume" to="." method="_on_volume_value_changed"]
+[connection signal="value_changed" from="sfx" to="." method="_on_sfx_value_changed"]

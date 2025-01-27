@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://duqcwoe5vqche"]
+
+[ext_resource type="Texture2D" uid="uid://ckjwujc7s6vqt" path="res://Assets/win.PNG" id="1_dk3c3"]
+[ext_resource type="Texture2D" uid="uid://ndvm1scqheex" path="res://Assets/btn.png" id="1_s01s3"]
+[ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="2_aeno1"]
+[ext_resource type="Texture2D" uid="uid://y8efknococcn" path="res://Assets/lose.PNG" id="4_nkk7c"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Win" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WinScr" type="Sprite2D" parent="Win"]
+position = Vector2(575.75, 323.5)
+scale = Vector2(1.41166, 1.21536)
+texture = ExtResource("1_dk3c3")
+
+[node name="Btn" type="Sprite2D" parent="Win"]
+position = Vector2(594, 315)
+texture = ExtResource("1_s01s3")
+
+[node name="Win" type="Label" parent="Win"]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 276.0
+offset_right = 771.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 58
+theme_override_fonts/font = ExtResource("2_aeno1")
+theme_override_font_sizes/font_size = 57
+text = "You Win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lose" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoseScr" type="Sprite2D" parent="Lose"]
+position = Vector2(575.75, 322.5)
+scale = Vector2(1.44354, 1.2433)
+texture = ExtResource("4_nkk7c")
+
+[node name="Btn" type="Sprite2D" parent="Lose"]
+position = Vector2(594, 315)
+texture = ExtResource("1_s01s3")
+
+[node name="Lose" type="Label" parent="Lose"]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 276.0
+offset_right = 771.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("2_aeno1")
+theme_override_font_sizes/font_size = 57
+text = "You Lose
+"
+horizontal_alignment = 1
+vertical_alignment = 1

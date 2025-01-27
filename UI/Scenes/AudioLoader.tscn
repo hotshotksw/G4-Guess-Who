@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ucmwhm6nbrxx"]
+
+[ext_resource type="AudioStream" uid="uid://diy7ck1xpvunf" path="res://Assets/Local Forecast - Elevator.mp3" id="1_66e1v"]
+[ext_resource type="Script" path="res://UI/Scripts/Music.gd" id="2_ehew0"]
+
+[node name="Audio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ehew0")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(509, 263)
+stream = ExtResource("1_66e1v")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="SFX_btn" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(686, 264)
+bus = &"SFX"
