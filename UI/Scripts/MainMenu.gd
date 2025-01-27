@@ -46,4 +46,8 @@ func _on_sfx_value_changed(value: float) -> void:
 
 
 func _on_pressed() -> void:
-	pass#AudioLoader.play_music("Scene2")
+	AudioLoader.play_music("Scene2")
+
+
+func _on_texture_button_pressed() -> void:
+	get_tree().quit(0)
