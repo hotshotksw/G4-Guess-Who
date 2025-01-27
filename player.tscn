@@ -1,12 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnepwp37n6wlm"]
+[gd_scene load_steps=14 format=3 uid="uid://cnepwp37n6wlm"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_60vx7"]
 [ext_resource type="PackedScene" uid="uid://cr1v14ao2hj" path="res://models/Boy.glb" id="2_fgqqv"]
 [ext_resource type="PackedScene" uid="uid://2eub3abg1ftp" path="res://UI/Scenes/FirstPersonHud.tscn" id="3_1k8ml"]
 [ext_resource type="PackedScene" uid="uid://c2i4jspd3pywh" path="res://UI/Scenes/QuestionUi.tscn" id="3_50ni0"]
 [ext_resource type="PackedScene" uid="uid://dna756va7k8xd" path="res://models/hands.glb" id="4_7qgi7"]
-[ext_resource type="PackedScene" uid="uid://to05n86tac38" path="res://UI/Scenes/EndScreen.tscn" id="5_4lx63"]
+[ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="5_3oiaa"]
 [ext_resource type="PackedScene" uid="uid://dsr3qkex7en3i" path="res://models/feet.glb" id="5_27h26"]
+[ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="6_advpn"]
+[ext_resource type="Script" path="res://UI/Scripts/GameUI.gd" id="7_gnsx6"]
+[ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="8_fsuy2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flo7i"]
 albedo_color = Color(1, 0.341176, 0.254902, 1)
@@ -42,10 +45,44 @@ collide_with_areas = true
 [node name="QuestionUi" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("3_50ni0")]
 
 [node name="FirstPersonHud" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("3_1k8ml")]
-script = null
 metadata/_edit_use_anchors_ = true
 
-[node name="EndScreen" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("5_4lx63")]
+[node name="TextureButton" type="TextureButton" parent="MeshInstance3D/Boy/Camera3D/FirstPersonHud"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_3oiaa")
+texture_pressed = ExtResource("5_3oiaa")
+texture_hover = ExtResource("6_advpn")
+script = ExtResource("7_gnsx6")
+
+[node name="Label2" type="Label" parent="MeshInstance3D/Boy/Camera3D/FirstPersonHud/TextureButton"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -103.0
+offset_right = 225.0
+offset_bottom = -36.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("8_fsuy2")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="hands" parent="MeshInstance3D" instance=ExtResource("4_7qgi7")]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0.011425, -0.385483, -0.003613)
@@ -57,3 +94,5 @@ transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 
 replication_interval = 0.1
 delta_interval = 0.1
 replication_config = SubResource("SceneReplicationConfig_dhxxy")
+
+[connection signal="pressed" from="MeshInstance3D/Boy/Camera3D/FirstPersonHud/TextureButton" to="MeshInstance3D/Boy/Camera3D/QuestionUi" method="_on_texture_button_pressed"]
