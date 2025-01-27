@@ -90,10 +90,6 @@ Char_EyeColor = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -0.5)
 image = ExtResource("9_gv6fc")
 
-[node name="Skeleton3D" parent="flipper8/Armature" index="0"]
-bones/0/position = Vector3(-0.0364276, 0.0409028, 0)
-bones/0/rotation = Quaternion(0, 0, -0.0753536, 0.997157)
-
 [node name="Flipper_Characteristics" parent="flipper8" index="3"]
 Char_HairColor = 5
 

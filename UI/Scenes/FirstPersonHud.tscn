@@ -2,14 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://c1qalfllixvd2" path="res://Assets/CrosshairDot.png" id="1_t1wnf"]
 
-[sub_resource type="GDScript" id="GDScript_ekabi"]
-script/source = "extends TextureRect
-
-
-func _ready() -> void:
-	pass # Replace with function body.
-"
-
 [node name="FirstPersonHud" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -37,3 +29,16 @@ pivot_offset = Vector2(50, 50)
 texture = ExtResource("1_t1wnf")
 expand_mode = 1
 stretch_mode = 3
+
+[node name="CharImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -167.0
+offset_top = 28.0
+offset_right = -27.0
+offset_bottom = 240.0
+grow_horizontal = 0
+expand_mode = 1
+stretch_mode = 5
