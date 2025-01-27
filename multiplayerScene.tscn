@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2bud04qhbsv6"]
+[gd_scene load_steps=8 format=3 uid="uid://c2bud04qhbsv6"]
 
 [ext_resource type="Script" path="res://Scripts/MultiplayerController.gd" id="1_kh2yh"]
+[ext_resource type="Texture2D" uid="uid://cueqa3n3jnkte" path="res://Assets/bkg.png" id="2_5qvqk"]
+[ext_resource type="Texture2D" uid="uid://ndvm1scqheex" path="res://Assets/btn.png" id="3_l5mbh"]
+[ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="4_7psik"]
+[ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="5_5w66l"]
+[ext_resource type="Script" path="res://UI/Scripts/MainMenu.gd" id="6_b56lx"]
+[ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="6_bck4j"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,75 +17,119 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kh2yh")
 
-[node name="Host" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -310.0
-offset_top = -26.5
-offset_right = -124.0
-offset_bottom = 26.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Host
-"
+[node name="Bkg" type="Sprite2D" parent="."]
+position = Vector2(573.5, 327.75)
+scale = Vector2(1.82907, 1.55516)
+texture = ExtResource("2_5qvqk")
 
-[node name="Join" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -93.0
-offset_top = -26.5
-offset_right = 93.0
-offset_bottom = 26.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Join
-"
-
-[node name="StartGame" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 118.0
-offset_top = -26.5
-offset_right = 304.0
-offset_bottom = 26.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Start Game"
+[node name="Btn" type="Sprite2D" parent="."]
+position = Vector2(550.5, 267)
+scale = Vector2(1.25977, 0.59375)
+texture = ExtResource("3_l5mbh")
 
 [node name="LineEdit" type="LineEdit" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -203.0
-offset_top = -73.0
-offset_right = 203.0
-offset_bottom = -42.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 383.0
+offset_top = 247.0
+offset_right = 851.0
+offset_bottom = 278.0
 
 [node name="Label" type="Label" parent="LineEdit"]
 layout_mode = 0
-offset_left = -64.0
+offset_left = -137.0
 offset_top = 5.0
-offset_right = -17.0
+offset_right = -6.0
 offset_bottom = 28.0
-text = "Name"
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_bck4j")
+text = "User Name:"
 
-[connection signal="button_down" from="Host" to="." method="_on_host_button_down"]
-[connection signal="button_down" from="Join" to="." method="_on_join_button_down"]
+[node name="StartGame" type="TextureButton" parent="." groups=["UI"]]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 358.0
+offset_right = 960.0
+offset_bottom = 486.0
+texture_normal = ExtResource("4_7psik")
+texture_pressed = ExtResource("4_7psik")
+texture_hover = ExtResource("5_5w66l")
+script = ExtResource("6_b56lx")
+
+[node name="Label" type="Label" parent="StartGame"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 37.0
+offset_right = 236.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 24
+theme_override_fonts/font = ExtResource("6_bck4j")
+theme_override_font_sizes/font_size = 25
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Join" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 359.0
+offset_right = 677.0
+offset_bottom = 487.0
+texture_normal = ExtResource("4_7psik")
+texture_pressed = ExtResource("4_7psik")
+texture_hover = ExtResource("5_5w66l")
+
+[node name="Label" type="Label" parent="Join"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 38.0
+offset_right = 170.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 24
+theme_override_fonts/font = ExtResource("6_bck4j")
+theme_override_font_sizes/font_size = 25
+text = "join"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Host" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 361.0
+offset_right = 394.0
+offset_bottom = 489.0
+texture_normal = ExtResource("4_7psik")
+texture_pressed = ExtResource("4_7psik")
+texture_hover = ExtResource("5_5w66l")
+
+[node name="Label" type="Label" parent="Host"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 38.0
+offset_right = 174.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 24
+theme_override_fonts/font = ExtResource("6_bck4j")
+theme_override_font_sizes/font_size = 25
+text = "Host"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="button_down" from="StartGame" to="." method="_on_start_game_button_down"]
+[connection signal="pressed" from="StartGame" to="StartGame" method="_on_pressed"]
+[connection signal="button_down" from="Join" to="." method="_on_join_button_down"]
+[connection signal="button_down" from="Host" to="." method="_on_host_button_down"]
