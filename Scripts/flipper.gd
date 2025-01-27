@@ -6,12 +6,12 @@ var open = true
 @onready var synchronizer = $MultiplayerSynchronizer
 @onready var characteristics = $Flipper_Characteristics
 
-signal guess(player_id: int, image_path: String)
-
+var gue
 #@export var stuff = Characteristics.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	gue = texture.load_path
 	var image = texture.get_image()
 
 	texture = ImageTexture.create_from_image(image)
@@ -31,7 +31,7 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 					rpc("flip_object")
 
 				elif event.button_index == MOUSE_BUTTON_MASK_RIGHT and open:
-					GameManager.player_guess(multiplayer.get_unique_id())
+					GameManager.player_guess(multiplayer.get_unique_id(), gue)
 
 			else:
 				print("You do not have authority to interact with this object.")

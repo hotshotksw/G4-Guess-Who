@@ -8,6 +8,7 @@ func _ready() -> void:
 	for player_data in GameManager.Players:
 		var currentPlayer = PlayerScene.instantiate()
 		currentPlayer.name = str(player_data.id)
+		player_data['playerRef'] = currentPlayer
 		add_child(currentPlayer)
 
 		for spawn in get_tree().get_nodes_in_group("PlayerSpawnPoint"):

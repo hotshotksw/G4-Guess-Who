@@ -41,6 +41,7 @@ collide_with_areas = true
 [node name="QuestionUi" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("3_50ni0")]
 
 [node name="FirstPersonHud" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("3_1k8ml")]
+script = null
 metadata/_edit_use_anchors_ = true
 
 [node name="hands" parent="MeshInstance3D" instance=ExtResource("4_7qgi7")]
