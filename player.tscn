@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnepwp37n6wlm"]
+[gd_scene load_steps=9 format=3 uid="uid://cnepwp37n6wlm"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_60vx7"]
 [ext_resource type="PackedScene" uid="uid://cr1v14ao2hj" path="res://models/Boy.glb" id="2_fgqqv"]
 [ext_resource type="PackedScene" uid="uid://2eub3abg1ftp" path="res://UI/Scenes/FirstPersonHud.tscn" id="3_1k8ml"]
+[ext_resource type="PackedScene" uid="uid://dna756va7k8xd" path="res://models/hands.glb" id="4_7qgi7"]
+[ext_resource type="PackedScene" uid="uid://dsr3qkex7en3i" path="res://models/feet.glb" id="5_27h26"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_xqgy3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flo7i"]
+albedo_color = Color(1, 0.341176, 0.254902, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oak3m"]
+material = SubResource("StandardMaterial3D_flo7i")
+height = 1.25
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dhxxy"]
 properties/0/path = NodePath(".:position")
@@ -18,10 +25,10 @@ properties/1/replication_mode = 1
 script = ExtResource("1_60vx7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_xqgy3")
+mesh = SubResource("CapsuleMesh_oak3m")
 
 [node name="Boy" parent="MeshInstance3D" instance=ExtResource("2_fgqqv")]
-transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 1.267, -0.08)
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 1.14771, -0.08)
 
 [node name="Camera3D" type="Camera3D" parent="MeshInstance3D/Boy"]
 transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, -7.34352e-08, 0.159993, 0.84)
@@ -31,6 +38,13 @@ target_position = Vector3(0, 0, -20)
 collide_with_areas = true
 
 [node name="FirstPersonHud" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("3_1k8ml")]
+metadata/_edit_use_anchors_ = true
+
+[node name="hands" parent="MeshInstance3D" instance=ExtResource("4_7qgi7")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0.011425, -0.385483, -0.003613)
+
+[node name="feet" parent="MeshInstance3D" instance=ExtResource("5_27h26")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 1.9744e-05, -1.02257, -0.0793143)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_interval = 0.1
