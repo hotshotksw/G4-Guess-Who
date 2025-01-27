@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckf74i2mk2kjk"]
+[gd_scene load_steps=13 format=3 uid="uid://ckf74i2mk2kjk"]
 
 [ext_resource type="Script" path="res://Scripts/SceneManager.gd" id="1_mf0bf"]
 [ext_resource type="PackedScene" uid="uid://cnepwp37n6wlm" path="res://player.tscn" id="2_em2j5"]
 [ext_resource type="Texture2D" uid="uid://cdvov8b0fvq1j" path="res://Assets/Stylized Sky BG (55).png" id="3_uucdl"]
-[ext_resource type="PackedScene" uid="uid://bn3jqdamt6w4p" path="res://k_flipper.tscn" id="4_7me5b"]
 [ext_resource type="PackedScene" uid="uid://dmyu4qglqmjjs" path="res://Pillar.glb" id="4_j50kb"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="6_1ldx2"]
+[ext_resource type="PackedScene" uid="uid://cvnbm6bxkure8" path="res://Board.tscn" id="6_g2hsw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tap07"]
 
@@ -29,7 +30,6 @@ ambient_light_color = Color(0.550621, 0.57532, 0.573368, 1)
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_mf0bf")
 PlayerScene = ExtResource("2_em2j5")
-FlipperScene = ExtResource("4_7me5b")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 10, -0.00531554, -1.19209e-07, 0.00343847)
@@ -38,10 +38,10 @@ mesh = SubResource("BoxMesh_tap07")
 [node name="SpawnLocations" type="Node3D" parent="."]
 
 [node name="0" type="Node3D" parent="SpawnLocations" groups=["PlayerSpawnPoint"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 3, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 3.4, 0)
 
 [node name="1" type="Node3D" parent="SpawnLocations" groups=["PlayerSpawnPoint"]]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 3, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 3.4, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 3, 0, 0, 0, 10, 0, 2, 0)
@@ -52,10 +52,19 @@ surface_material_override/0 = SubResource("StandardMaterial3D_x4hes")
 environment = SubResource("Environment_nkpnh")
 
 [node name="Pillar" parent="." instance=ExtResource("4_j50kb")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 7, 0.471, 0)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 7, -0.5, 0)
 
 [node name="Pillar2" parent="." instance=ExtResource("4_j50kb")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -7, 0.471, 0)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -7, -0.5, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.35862, 0)
+
+[node name="Board_1" parent="." instance=ExtResource("6_g2hsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 1, 0)
+
+[node name="Board_0" parent="." instance=ExtResource("6_g2hsw")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.25, 1, 0)
+
+[node name="Manager" type="Node" parent="."]
+script = ExtResource("6_1ldx2")

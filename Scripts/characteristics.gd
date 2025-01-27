@@ -4,7 +4,7 @@ class_name Characteristics
 
 # Enums for character features
 enum Gender { MALE, FEMALE }
-enum HairColor { BLONDE, BROWN, BLACK, RED, WHITE }
+enum HairColor { BLONDE, BROWN, BLACK, RED, WHITE, NONE }
 enum EyeColor { BLUE, BROWN, GREEN }
 enum Accessories { NONE, GLASSES, HAT, EARRINGS }
 enum FacialHair { NONE, MUSTACHE, BEARD }

@@ -4,6 +4,9 @@ extends Node3D
 var open = true
 @onready var anim_player = $AnimationPlayer
 @onready var synchronizer = $MultiplayerSynchronizer
+@onready var characteristics = $Flipper_Characteristics
+
+signal guess(player_id: int, image: Image)
 
 #@export var stuff = Characteristics.new()
 
@@ -21,7 +24,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
@@ -30,10 +32,11 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 					rpc("flip_object")
 
 				elif event.button_index == MOUSE_BUTTON_MASK_RIGHT and open:
+					Signalbus.guess_character.emit(multiplayer.get_unique_id(), texture.get_image())
 					print('Are you sure you want to guess them?')
 
 			else:
-					print("You do not have authority to interact with this object.")
+				print("You do not have authority to interact with this object.")
 
 @rpc("call_local")
 func flip_object():

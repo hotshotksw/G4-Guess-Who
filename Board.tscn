@@ -1,0 +1,260 @@
+[gd_scene load_steps=26 format=3 uid="uid://cvnbm6bxkure8"]
+
+[ext_resource type="PackedScene" uid="uid://bn3jqdamt6w4p" path="res://k_flipper.tscn" id="1_k0woe"]
+[ext_resource type="Texture2D" uid="uid://ks4c0ef1bxkv" path="res://Assets/Characters/812 Average Guy Stock Photos - Free & Royalty-Free Stock Photos from  Dreamstime.jpg" id="2_eje2o"]
+[ext_resource type="Texture2D" uid="uid://hck526k365ev" path="res://Assets/Characters/100,000+ Free Woman & Girl Images - Pixabay.png" id="3_d1ou7"]
+[ext_resource type="Texture2D" uid="uid://dkhvl4v53pigb" path="res://Assets/Characters/8,043 Woman Eureka Images, Stock Photos, 3D objects, & Vectors _  Shutterstock.png" id="4_h7btp"]
+[ext_resource type="Texture2D" uid="uid://dilqwwl6ak6t8" path="res://Assets/Characters/5,700 Silverback Gorilla Stock Photos - Free & Royalty-Free Stock Photos  from Dreamstime.png" id="5_eqjoe"]
+[ext_resource type="Texture2D" uid="uid://bd2hgk70a7h8k" path="res://Assets/Characters/Dark Portrait of Scary Evil Sinister Man Stock Image - Image of monster,  dark_ 11030651.png" id="6_hqdhv"]
+[ext_resource type="Texture2D" uid="uid://cffrrc43h36nt" path="res://Assets/Characters/Cool Black Guy Stock Photo _ Royalty-Free _ FreeImages.png" id="7_23q81"]
+[ext_resource type="Texture2D" uid="uid://vf0sg8op7n57" path="res://Assets/Characters/callcenter.png" id="8_utitf"]
+[ext_resource type="Texture2D" uid="uid://cs1pl6hkdjrgf" path="res://Assets/Characters/baldy.png" id="9_dampn"]
+[ext_resource type="Texture2D" uid="uid://bwgevoahs4pix" path="res://Assets/Characters/Hide the Pain Harold_ Old Guy, Stock Photo Model, Tortured____.png" id="10_kslip"]
+[ext_resource type="Texture2D" uid="uid://jk4qs8nb4wul" path="res://Assets/Characters/Handsome young man Free Stock Photos, Images, and Pictures of Handsome  young man.png" id="11_bxlmm"]
+[ext_resource type="Texture2D" uid="uid://nhx2l0p13eed" path="res://Assets/Characters/Full length portrait of mime artist jumping with joy Stock Photo - Alamy.png" id="12_r8nmb"]
+[ext_resource type="Texture2D" uid="uid://cfspnlhsijyo8" path="res://Assets/Characters/Free Royalty Stock Photos and Images of Whimsical Women.png" id="13_k3db4"]
+[ext_resource type="Texture2D" uid="uid://cklo47vjxdk55" path="res://Assets/Characters/Photo de stock Crazy Mad Woman Makes Funny Face 1478822261 _ Shutterstock.png" id="14_7acoy"]
+[ext_resource type="Texture2D" uid="uid://r0uy6ohrvmcv" path="res://Assets/Characters/Photo & Art Print Beaten business man, close-up isolated on white, Alen-D.png" id="15_gfft1"]
+[ext_resource type="Texture2D" uid="uid://cmuruuwfkgjuk" path="res://Assets/Characters/Oops Stock Photo - Download Image Now - 50-54 Years, Adult, Adults Only -  iStock.png" id="16_gx536"]
+[ext_resource type="Texture2D" uid="uid://bkuc8tcnvglsy" path="res://Assets/Characters/idea.png" id="17_liaqi"]
+[ext_resource type="Texture2D" uid="uid://bnegxk2f45eio" path="res://Assets/Characters/smartypants.png" id="18_wr8y6"]
+[ext_resource type="Texture2D" uid="uid://bblhxq443eg7i" path="res://Assets/Characters/sing.png" id="19_faj0h"]
+[ext_resource type="Texture2D" uid="uid://dn5q1aqv2mb3q" path="res://Assets/Characters/Random Stock Photos.png" id="20_2lxg5"]
+[ext_resource type="Texture2D" uid="uid://4yivx5qi6xkp" path="res://Assets/Characters/Portrait Happy Young Image & Photo (Free Trial) _ Bigstock.png" id="21_uq66n"]
+[ext_resource type="Texture2D" uid="uid://7uk7ge0pvsmr" path="res://Assets/Characters/Young man posing against white background Royalty-Free Stock Image -  Storyblocks.png" id="22_qyjpd"]
+[ext_resource type="Texture2D" uid="uid://cip8yysk0loc1" path="res://Assets/Characters/woman lady funny Stock Photo - Alamy.png" id="23_evn2q"]
+[ext_resource type="Texture2D" uid="uid://bsirtudkdj5vl" path="res://Assets/Characters/Thinking Guy Png Image Stock - Deal With Your Boss - Free Transparent PNG  Download - PNGkey.png" id="24_4h8x3"]
+[ext_resource type="Texture2D" uid="uid://4ron5ltc7mwo" path="res://Assets/Characters/streetclothes.png" id="25_y5c1d"]
+
+[node name="Board" type="Node3D"]
+
+[node name="flipper" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0.5)
+texture = ExtResource("2_eje2o")
+
+[node name="flipper2" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 1.5)
+texture = ExtResource("3_d1ou7")
+
+[node name="Flipper_Characteristics" parent="flipper2" index="3"]
+Char_Gender = 1
+Char_HairColor = 2
+Char_EyeColor = 1
+Char_Accessories = 2
+
+[node name="flipper3" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 2.5)
+texture = ExtResource("4_h7btp")
+
+[node name="Flipper_Characteristics" parent="flipper3" index="3"]
+Char_Gender = 1
+Char_HairColor = 1
+
+[node name="flipper4" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 3.5)
+texture = ExtResource("5_eqjoe")
+
+[node name="Flipper_Characteristics" parent="flipper4" index="3"]
+Char_HairColor = 2
+Char_EyeColor = 1
+Char_FacialHair = 2
+
+[node name="flipper5" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -3.5)
+texture = ExtResource("6_hqdhv")
+
+[node name="Flipper_Characteristics" parent="flipper5" index="3"]
+Char_HairColor = 1
+Char_EyeColor = 1
+Char_Accessories = 2
+Char_FacialHair = 2
+
+[node name="flipper6" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -2.5)
+texture = ExtResource("7_23q81")
+
+[node name="Flipper_Characteristics" parent="flipper6" index="3"]
+Char_HairColor = 2
+Char_EyeColor = 1
+
+[node name="flipper7" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -1.5)
+texture = ExtResource("8_utitf")
+
+[node name="Flipper_Characteristics" parent="flipper7" index="3"]
+Char_Gender = 1
+Char_HairColor = 2
+Char_EyeColor = 1
+
+[node name="flipper8" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -0.5)
+texture = ExtResource("9_dampn")
+
+[node name="Flipper_Characteristics" parent="flipper8" index="3"]
+Char_HairColor = 5
+
+[node name="flipper9" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.6, 0.5)
+texture = ExtResource("10_kslip")
+
+[node name="Flipper_Characteristics" parent="flipper9" index="3"]
+Char_HairColor = 4
+Char_FacialHair = 2
+
+[node name="flipper10" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.6, 1.5)
+texture = ExtResource("11_bxlmm")
+
+[node name="Flipper_Characteristics" parent="flipper10" index="3"]
+Char_HairColor = 1
+Char_EyeColor = 1
+Char_FacialHair = 2
+
+[node name="flipper11" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.6, 2.5)
+texture = ExtResource("12_r8nmb")
+
+[node name="Flipper_Characteristics" parent="flipper11" index="3"]
+Char_HairColor = 1
+Char_EyeColor = 1
+Char_Accessories = 2
+
+[node name="flipper12" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.6, 3.5)
+texture = ExtResource("13_k3db4")
+
+[node name="Flipper_Characteristics" parent="flipper12" index="3"]
+Char_Gender = 1
+Char_HairColor = 1
+Char_EyeColor = 1
+Char_Accessories = 1
+Char_FacialHair = 1
+
+[node name="flipper13" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.6, -3.5)
+texture = ExtResource("14_7acoy")
+
+[node name="Flipper_Characteristics" parent="flipper13" index="3"]
+Char_Gender = 1
+
+[node name="flipper14" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.6, -2.5)
+texture = ExtResource("15_gfft1")
+
+[node name="Flipper_Characteristics" parent="flipper14" index="3"]
+Char_HairColor = 1
+Char_EyeColor = 1
+Char_Accessories = 2
+
+[node name="flipper15" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.6, -1.5)
+texture = ExtResource("16_gx536")
+
+[node name="Flipper_Characteristics" parent="flipper15" index="3"]
+Char_Gender = 1
+Char_HairColor = 1
+Char_EyeColor = 1
+
+[node name="flipper16" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0.6, -0.5)
+texture = ExtResource("17_liaqi")
+
+[node name="Flipper_Characteristics" parent="flipper16" index="3"]
+Char_HairColor = 2
+Char_EyeColor = 1
+
+[node name="flipper17" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, 0.5)
+texture = ExtResource("18_wr8y6")
+
+[node name="Flipper_Characteristics" parent="flipper17" index="3"]
+Char_HairColor = 1
+Char_EyeColor = 1
+Char_Accessories = 1
+
+[node name="flipper18" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, 1.5)
+texture = ExtResource("19_faj0h")
+
+[node name="Flipper_Characteristics" parent="flipper18" index="3"]
+Char_HairColor = 1
+Char_EyeColor = 1
+Char_Accessories = 1
+
+[node name="flipper19" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, 2.5)
+texture = ExtResource("20_2lxg5")
+
+[node name="Flipper_Characteristics" parent="flipper19" index="3"]
+Char_HairColor = 1
+Char_Accessories = 2
+
+[node name="flipper20" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, 3.5)
+texture = ExtResource("21_uq66n")
+
+[node name="Flipper_Characteristics" parent="flipper20" index="3"]
+Char_HairColor = 1
+Char_EyeColor = 2
+
+[node name="flipper21" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, -3.5)
+texture = ExtResource("22_qyjpd")
+
+[node name="Flipper_Characteristics" parent="flipper21" index="3"]
+Char_HairColor = 2
+Char_EyeColor = 1
+
+[node name="flipper22" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, -2.5)
+texture = ExtResource("23_evn2q")
+
+[node name="Flipper_Characteristics" parent="flipper22" index="3"]
+Char_Gender = 1
+Char_HairColor = 4
+Char_EyeColor = 2
+Char_Accessories = 2
+
+[node name="flipper23" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, -1.5)
+texture = ExtResource("24_4h8x3")
+
+[node name="Flipper_Characteristics" parent="flipper23" index="3"]
+Char_HairColor = 2
+Char_EyeColor = 1
+Char_Accessories = 1
+
+[node name="flipper24" parent="." instance=ExtResource("1_k0woe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, -0.5)
+texture = ExtResource("25_y5c1d")
+
+[node name="Flipper_Characteristics" parent="flipper24" index="3"]
+Char_HairColor = 2
+Char_EyeColor = 1
+Char_Accessories = 2
+Char_FacialHair = 2
+
+[editable path="flipper"]
+[editable path="flipper2"]
+[editable path="flipper3"]
+[editable path="flipper4"]
+[editable path="flipper5"]
+[editable path="flipper6"]
+[editable path="flipper7"]
+[editable path="flipper8"]
+[editable path="flipper9"]
+[editable path="flipper10"]
+[editable path="flipper11"]
+[editable path="flipper12"]
+[editable path="flipper13"]
+[editable path="flipper14"]
+[editable path="flipper15"]
+[editable path="flipper16"]
+[editable path="flipper17"]
+[editable path="flipper18"]
+[editable path="flipper19"]
+[editable path="flipper20"]
+[editable path="flipper21"]
+[editable path="flipper22"]
+[editable path="flipper23"]
+[editable path="flipper24"]

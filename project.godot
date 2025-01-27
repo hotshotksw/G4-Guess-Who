@@ -19,3 +19,4 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Scripts/GameManager.gd"
 AudioLoader="*res://UI/Scenes/AudioLoader.tscn"
+Signalbus="*res://Scripts/Signalbus.gd"

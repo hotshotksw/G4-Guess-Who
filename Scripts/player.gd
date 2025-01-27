@@ -12,8 +12,7 @@ func _ready() -> void:
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
 	if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id():
 		camera.make_current()
-	
-	print(multiplayer.get_unique_id())
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,20 +32,20 @@ func _input(event: InputEvent) -> void:
 		elif event is InputEventMouseButton and event.pressed:
 			if ray.is_colliding():
 				var node = ray.get_collider()
-	
+
 				while node and not node.has_method("_on_area_3d_input_event"):
 					node = node.get_parent()
-	
+
 				if node:
 					var custom_event = InputEventMouseButton.new()
 					custom_event.button_index = event.button_index
 					custom_event.pressed = true
 					node._on_area_3d_input_event(camera, custom_event, ray.get_collision_point(),
 						ray.get_collision_normal(), ray.get_collider_shape())
-	
+
 		elif event.is_action_pressed("ui_cancel"):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+
 	elif Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		if event is InputEventMouseButton and event.pressed:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
