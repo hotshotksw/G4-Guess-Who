@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jk4qs8nb4wul"
-path.s3tc="res://.godot/imported/Handsome young man Free Stock Photos, Images, and Pictures of Handsome  young man.png-3cf6a1e6de6c99ecf75e5eafe4cda5ca.s3tc.ctex"
+uid="uid://r0uy6ohrvmcv"
+path.s3tc="res://.godot/imported/bandage.png-85922318806bd2299f7ae1c5b8a9663f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/Handsome young man Free Stock Photos, Images, and Pictures of Handsome  young man.png"
-dest_files=["res://.godot/imported/Handsome young man Free Stock Photos, Images, and Pictures of Handsome  young man.png-3cf6a1e6de6c99ecf75e5eafe4cda5ca.s3tc.ctex"]
+source_file="res://Assets/Characters/bandage.png"
+dest_files=["res://.godot/imported/bandage.png-85922318806bd2299f7ae1c5b8a9663f.s3tc.ctex"]
 
 [params]
 

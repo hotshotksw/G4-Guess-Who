@@ -5,9 +5,9 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var index = 0
-	for i in GameManager.Players:
+	for player_data in GameManager.Players:
 		var currentPlayer = PlayerScene.instantiate()
-		currentPlayer.name = str(GameManager.Players[i].id)
+		currentPlayer.name = str(player_data.id)
 		add_child(currentPlayer)
 
 		for spawn in get_tree().get_nodes_in_group("PlayerSpawnPoint"):
@@ -16,13 +16,11 @@ func _ready() -> void:
 				currentPlayer.global_rotation = spawn.global_rotation
 
 		if index == 0:
-			$Board_0.set_multiplayer_authority(GameManager.Players[i].id)
+			$Board_0.set_multiplayer_authority(player_data.id)
 
 		elif index == 1:
-			$Board_1.set_multiplayer_authority(GameManager.Players[i].id)
+			$Board_1.set_multiplayer_authority(player_data.id)
 
 		index += 1
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+	GameManager.start_game()

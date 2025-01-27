@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmuruuwfkgjuk"
-path.s3tc="res://.godot/imported/Oops Stock Photo - Download Image Now - 50-54 Years, Adult, Adults Only -  iStock.png-e5bbb513d479d01423619a61c5e9fc04.s3tc.ctex"
+uid="uid://cklo47vjxdk55"
+path.s3tc="res://.godot/imported/boxsize.png-c23e50f3679dcd46803d1ce10178a8eb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/Oops Stock Photo - Download Image Now - 50-54 Years, Adult, Adults Only -  iStock.png"
-dest_files=["res://.godot/imported/Oops Stock Photo - Download Image Now - 50-54 Years, Adult, Adults Only -  iStock.png-e5bbb513d479d01423619a61c5e9fc04.s3tc.ctex"]
+source_file="res://Assets/Characters/boxsize.png"
+dest_files=["res://.godot/imported/boxsize.png-c23e50f3679dcd46803d1ce10178a8eb.s3tc.ctex"]
 
 [params]
 

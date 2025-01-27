@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn5q1aqv2mb3q"
-path.s3tc="res://.godot/imported/Random Stock Photos.png-b6016821d0d9581abf4af1ac76369f8a.s3tc.ctex"
+uid="uid://hck526k365ev"
+path.s3tc="res://.godot/imported/woman.png-d3cb90f5f52eda328e82ea28c93dec25.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/Random Stock Photos.png"
-dest_files=["res://.godot/imported/Random Stock Photos.png-b6016821d0d9581abf4af1ac76369f8a.s3tc.ctex"]
+source_file="res://Assets/Characters/woman.png"
+dest_files=["res://.godot/imported/woman.png-d3cb90f5f52eda328e82ea28c93dec25.s3tc.ctex"]
 
 [params]
 

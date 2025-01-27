@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cffrrc43h36nt"
-path.s3tc="res://.godot/imported/Cool Black Guy Stock Photo _ Royalty-Free _ FreeImages.png-c4ccafa74c99026dc07ae393d17ef223.s3tc.ctex"
+uid="uid://ks4c0ef1bxkv"
+path.s3tc="res://.godot/imported/whiteguy.jpg-1cc04983584d0006d9b171fcf378b24f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/Cool Black Guy Stock Photo _ Royalty-Free _ FreeImages.png"
-dest_files=["res://.godot/imported/Cool Black Guy Stock Photo _ Royalty-Free _ FreeImages.png-c4ccafa74c99026dc07ae393d17ef223.s3tc.ctex"]
+source_file="res://Assets/Characters/whiteguy.jpg"
+dest_files=["res://.godot/imported/whiteguy.jpg-1cc04983584d0006d9b171fcf378b24f.s3tc.ctex"]
 
 [params]
 

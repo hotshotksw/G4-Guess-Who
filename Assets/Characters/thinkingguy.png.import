@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hck526k365ev"
-path.s3tc="res://.godot/imported/100,000+ Free Woman & Girl Images - Pixabay.png-41841dd8d8239f47a7f6a95a106bbdb8.s3tc.ctex"
+uid="uid://bsirtudkdj5vl"
+path.s3tc="res://.godot/imported/thinkingguy.png-fa9f3b4a9d48c84f81f20b8d911c0f08.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/100,000+ Free Woman & Girl Images - Pixabay.png"
-dest_files=["res://.godot/imported/100,000+ Free Woman & Girl Images - Pixabay.png-41841dd8d8239f47a7f6a95a106bbdb8.s3tc.ctex"]
+source_file="res://Assets/Characters/thinkingguy.png"
+dest_files=["res://.godot/imported/thinkingguy.png-fa9f3b4a9d48c84f81f20b8d911c0f08.s3tc.ctex"]
 
 [params]
 

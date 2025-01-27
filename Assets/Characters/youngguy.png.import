@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7uk7ge0pvsmr"
-path.s3tc="res://.godot/imported/Young man posing against white background Royalty-Free Stock Image -  Storyblocks.png-affc88be7d7bca412de785b3d6d3116d.s3tc.ctex"
+uid="uid://jk4qs8nb4wul"
+path.s3tc="res://.godot/imported/youngguy.png-0a1f6affce82bcb9fbddd1e11b07a370.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/Young man posing against white background Royalty-Free Stock Image -  Storyblocks.png"
-dest_files=["res://.godot/imported/Young man posing against white background Royalty-Free Stock Image -  Storyblocks.png-affc88be7d7bca412de785b3d6d3116d.s3tc.ctex"]
+source_file="res://Assets/Characters/youngguy.png"
+dest_files=["res://.godot/imported/youngguy.png-0a1f6affce82bcb9fbddd1e11b07a370.s3tc.ctex"]
 
 [params]
 

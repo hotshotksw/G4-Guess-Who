@@ -24,29 +24,38 @@ environment = SubResource("Environment_h5lmf")
 
 [node name="flipper" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 0, -0.699773, -3.68878)
+texture = null
 
 [node name="flipper2" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 1.07289, -0.699773, -3.68878)
+texture = null
 
 [node name="flipper3" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, -1.0635, -0.699773, -3.68878)
+texture = null
 
 [node name="flipper4" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 0, -0.699773, -5.31469)
+texture = null
 
 [node name="flipper5" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 1.07289, -0.699773, -5.31469)
+texture = null
 
 [node name="flipper6" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, -1.0635, -0.699773, -5.31469)
+texture = null
 
 [node name="flipper7" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 0, -0.699773, -6.93456)
+texture = null
 
 [node name="flipper8" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, 1.07289, -0.699773, -6.93456)
+texture = null
 
 [node name="flipper9" parent="." instance=ExtResource("3_g4wq8")]
 transform = Transform3D(-0.0186565, 0, -0.999826, 0, 1, 0, 0.999826, 0, -0.0186565, -1.0635, -0.699773, -6.93456)
+texture = null
 
 [node name="Player" parent="." instance=ExtResource("3_6po62")]

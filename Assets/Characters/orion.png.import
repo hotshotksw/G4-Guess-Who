@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd2hgk70a7h8k"
-path.s3tc="res://.godot/imported/Dark Portrait of Scary Evil Sinister Man Stock Image - Image of monster,  dark_ 11030651.png-c74855bd7914e96fa207c7583a132a62.s3tc.ctex"
+uid="uid://cffrrc43h36nt"
+path.s3tc="res://.godot/imported/orion.png-ebf2cdfba100b3e64352987f683d4460.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/Dark Portrait of Scary Evil Sinister Man Stock Image - Image of monster,  dark_ 11030651.png"
-dest_files=["res://.godot/imported/Dark Portrait of Scary Evil Sinister Man Stock Image - Image of monster,  dark_ 11030651.png-c74855bd7914e96fa207c7583a132a62.s3tc.ctex"]
+source_file="res://Assets/Characters/orion.png"
+dest_files=["res://.godot/imported/orion.png-ebf2cdfba100b3e64352987f683d4460.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nhx2l0p13eed"
-path.s3tc="res://.godot/imported/Full length portrait of mime artist jumping with joy Stock Photo - Alamy.png-aa8607449610541fa7dab7187dbd5cb3.s3tc.ctex"
+uid="uid://cfspnlhsijyo8"
+path.s3tc="res://.godot/imported/hidden.png-db25474600d158fdc7469a66c88d32cd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/Full length portrait of mime artist jumping with joy Stock Photo - Alamy.png"
-dest_files=["res://.godot/imported/Full length portrait of mime artist jumping with joy Stock Photo - Alamy.png-aa8607449610541fa7dab7187dbd5cb3.s3tc.ctex"]
+source_file="res://Assets/Characters/hidden.png"
+dest_files=["res://.godot/imported/hidden.png-db25474600d158fdc7469a66c88d32cd.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cip8yysk0loc1"
-path.s3tc="res://.godot/imported/woman lady funny Stock Photo - Alamy.png-686d52e16c07038a17fbcdc3d9212767.s3tc.ctex"
+uid="uid://dkhvl4v53pigb"
+path.s3tc="res://.godot/imported/eureka.png-3b384f3a066d5bcb58bdc4bae6d5ad85.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/woman lady funny Stock Photo - Alamy.png"
-dest_files=["res://.godot/imported/woman lady funny Stock Photo - Alamy.png-686d52e16c07038a17fbcdc3d9212767.s3tc.ctex"]
+source_file="res://Assets/Characters/eureka.png"
+dest_files=["res://.godot/imported/eureka.png-3b384f3a066d5bcb58bdc4bae6d5ad85.s3tc.ctex"]
 
 [params]
 

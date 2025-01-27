@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r0uy6ohrvmcv"
-path.s3tc="res://.godot/imported/Photo & Art Print Beaten business man, close-up isolated on white, Alen-D.png-36461d8b7cc598466519aeb711f237df.s3tc.ctex"
+uid="uid://4yivx5qi6xkp"
+path.s3tc="res://.godot/imported/thumbs.png-0a84ee5f6c25428dba0acd15ae5b9884.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/Photo & Art Print Beaten business man, close-up isolated on white, Alen-D.png"
-dest_files=["res://.godot/imported/Photo & Art Print Beaten business man, close-up isolated on white, Alen-D.png-36461d8b7cc598466519aeb711f237df.s3tc.ctex"]
+source_file="res://Assets/Characters/thumbs.png"
+dest_files=["res://.godot/imported/thumbs.png-0a84ee5f6c25428dba0acd15ae5b9884.s3tc.ctex"]
 
 [params]
 

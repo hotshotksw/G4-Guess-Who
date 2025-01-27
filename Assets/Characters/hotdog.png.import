@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwgevoahs4pix"
-path.s3tc="res://.godot/imported/Hide the Pain Harold_ Old Guy, Stock Photo Model, Tortured____.png-b971b14a48e1af9a2270ac91798e8fe4.s3tc.ctex"
+uid="uid://dn5q1aqv2mb3q"
+path.s3tc="res://.godot/imported/hotdog.png-ee58ba0144c476304a1a23797eaeb21a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/Hide the Pain Harold_ Old Guy, Stock Photo Model, Tortured____.png"
-dest_files=["res://.godot/imported/Hide the Pain Harold_ Old Guy, Stock Photo Model, Tortured____.png-b971b14a48e1af9a2270ac91798e8fe4.s3tc.ctex"]
+source_file="res://Assets/Characters/hotdog.png"
+dest_files=["res://.godot/imported/hotdog.png-ee58ba0144c476304a1a23797eaeb21a.s3tc.ctex"]
 
 [params]
 

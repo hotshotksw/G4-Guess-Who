@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ks4c0ef1bxkv"
-path.s3tc="res://.godot/imported/812 Average Guy Stock Photos - Free & Royalty-Free Stock Photos from  Dreamstime.jpg-f922b254600b8aa5761bcc21f53e8407.s3tc.ctex"
+uid="uid://bwgevoahs4pix"
+path.s3tc="res://.godot/imported/harold.png-95a44150c0f0d27e8363edc28a7ff6cb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/812 Average Guy Stock Photos - Free & Royalty-Free Stock Photos from  Dreamstime.jpg"
-dest_files=["res://.godot/imported/812 Average Guy Stock Photos - Free & Royalty-Free Stock Photos from  Dreamstime.jpg-f922b254600b8aa5761bcc21f53e8407.s3tc.ctex"]
+source_file="res://Assets/Characters/harold.png"
+dest_files=["res://.godot/imported/harold.png-95a44150c0f0d27e8363edc28a7ff6cb.s3tc.ctex"]
 
 [params]
 

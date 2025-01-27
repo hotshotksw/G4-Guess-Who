@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsirtudkdj5vl"
-path.s3tc="res://.godot/imported/Thinking Guy Png Image Stock - Deal With Your Boss - Free Transparent PNG  Download - PNGkey.png-5dff0abb8a21a6fa4963d3e24dfba0d6.s3tc.ctex"
+uid="uid://nhx2l0p13eed"
+path.s3tc="res://.godot/imported/mime.png-d19a3d534afa0b7f05c91310cfd4498c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Characters/Thinking Guy Png Image Stock - Deal With Your Boss - Free Transparent PNG  Download - PNGkey.png"
-dest_files=["res://.godot/imported/Thinking Guy Png Image Stock - Deal With Your Boss - Free Transparent PNG  Download - PNGkey.png-5dff0abb8a21a6fa4963d3e24dfba0d6.s3tc.ctex"]
+source_file="res://Assets/Characters/mime.png"
+dest_files=["res://.godot/imported/mime.png-d19a3d534afa0b7f05c91310cfd4498c.s3tc.ctex"]
 
 [params]
 

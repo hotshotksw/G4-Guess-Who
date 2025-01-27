@@ -12,6 +12,7 @@ size = Vector3(0.589355, 1.3252, 0.727051)
 
 [node name="flipper" instance=ExtResource("1_7yn5q")]
 script = ExtResource("2_nh2n3")
+texture = null
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/position = Vector3(-0.0364276, 0.0409028, 0)
