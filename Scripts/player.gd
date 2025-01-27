@@ -54,5 +54,10 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.pressed:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+func set_image(image):
+	var char_image = get_node("MeshInstance3D/Boy/Camera3D/FirstPersonHud/CharImage") as TextureRect
+	char_image.texture = image
+
+
 # if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id()
 # -- if true, following code will occur

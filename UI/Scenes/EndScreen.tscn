@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://duqcwoe5vqche"]
+[gd_scene load_steps=5 format=3 uid="uid://to05n86tac38"]
 
 [ext_resource type="Texture2D" uid="uid://ckjwujc7s6vqt" path="res://Assets/win.PNG" id="1_dk3c3"]
 [ext_resource type="Texture2D" uid="uid://bgvxfj8j7ejdf" path="res://Assets/btn.png" id="1_s01s3"]
@@ -12,8 +12,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Win" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -45,6 +47,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Lose" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
