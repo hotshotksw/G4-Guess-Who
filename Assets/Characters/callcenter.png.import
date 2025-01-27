@@ -1,35 +1,14 @@
 [remap]
 
-importer="texture"
-type="CompressedTexture2D"
+importer="image"
+type="Image"
 uid="uid://vf0sg8op7n57"
-path.s3tc="res://.godot/imported/callcenter.png-d01fc542b0cff31e7712c2e9b14740eb.s3tc.ctex"
-metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
+path="res://.godot/imported/callcenter.png-d01fc542b0cff31e7712c2e9b14740eb.image"
 
 [deps]
 
 source_file="res://Assets/Characters/callcenter.png"
-dest_files=["res://.godot/imported/callcenter.png-d01fc542b0cff31e7712c2e9b14740eb.s3tc.ctex"]
+dest_files=["res://.godot/imported/callcenter.png-d01fc542b0cff31e7712c2e9b14740eb.image"]
 
 [params]
 
-compress/mode=2
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=true
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=0
