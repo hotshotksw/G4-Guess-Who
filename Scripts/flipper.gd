@@ -13,7 +13,6 @@ var gue
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var texture = ImageTexture.create_from_image(image)
-	gue = texture.resource_path
 	var mat = StandardMaterial3D.new()
 	mat.albedo_texture = texture
 	$Armature/Skeleton3D/Cylinder.set_surface_override_material(1, mat)

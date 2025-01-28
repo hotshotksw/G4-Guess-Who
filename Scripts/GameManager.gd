@@ -26,27 +26,32 @@ func start_game():
 	if Players.size() < 2:
 		print("Cannot start game. Add more players.")
 		return
-		
+
 	select_player_image()
 
 	advance_turn()
 
+@rpc("authority")
 func add_player(name, id):
 	if Players.size() < 2:
-		var player_data = {"name": name, "id": id}
+		var player_data = {"name": name, "id": id, "playerRef": null}
 		Players.append(player_data)
+
 	else:
 		print("No more slots available for players.")
 
 @rpc("authority")
 func player_guess(player_id: int, image: Image):
-	if Players[current_turn]['id'] == player_id:
-		for player in Players:
-			if player['id'] != player_id:
-				if player['image'] == image:
-					end_game(player_id, player['id'])
-				else:
-					end_game(player['id'], player_id)
+	if Players[current_turn]['id'] != player_id:
+		return
+
+	for player in Players:
+		if player['id'] != player_id:
+			if player['playerRef'].path == image.resource_path:
+				end_game(player_id, player['id'])
+
+			else:
+				end_game(player['id'], player_id)
 
 @rpc("any_peer","call_local")
 func ask_question(key, value):
@@ -64,14 +69,17 @@ func advance_turn():
 	currentPlayer = Players[current_turn]['playerRef']
 	currentPlayer.get_node('MeshInstance3D/Boy/Camera3D/QuestionUi').visible = true
 
-@rpc("any_peer","reliable")
+	print("Current Turn: ", current_turn, " on ", multiplayer.get_unique_id())
+	print("Players Data: ", str(Players))
+
+
+@rpc("authority")
 func end_game(winner_id: int, loser_id: int):
 	var winner = get_player_by_id(winner_id)
 	var loser = get_player_by_id(loser_id)
 
 	winner['playerRef'].get_node('MeshInstance3D/Boy/Camera3D/EndScreen/Win').visible = true
 	loser['playerRef'].get_node('MeshInstance3D/Boy/Camera3D/EndScreen/Lose').visible = true
-
 
 func get_player_by_id(player_id):
 	for player in Players:
