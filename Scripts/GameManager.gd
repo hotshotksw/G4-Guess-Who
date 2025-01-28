@@ -32,8 +32,7 @@ func start_game():
 	select_player_image()
 	advance_turn.rpc_id(current_turn)
 	Players[current_turn]['playerRef'].get_node("MeshInstance3D/Boy/Camera3D/FirstPersonHud/Turn").visible = true;
-	#Players[0]['playerRef'].isTurn = false
-	#Players[1]['playerRef'].isTurn = true
+
 
 @rpc("authority")
 func add_player(name, id):
@@ -63,8 +62,8 @@ func ask_question(key, value):
 	print(value)
 	var placeholder = {"Gender":0}
 	var result = "No"
-	if(placeholder[key] == value):
-		result = "yes"
+	#if(placeholder[key] == value):
+		#result = "yes"
 	answer = result
 
 @rpc("any_peer", "call_local")
@@ -105,6 +104,7 @@ func get_player_by_id(player_id):
 	return null
 
 func select_player_image():
+	var player = get_player_by_id(multiplayer.get_unique_id()) as Dictionary
 	var boards = get_tree().get_nodes_in_group("Board")
 	var flippers = boards[0].get_children()
 	var c : Flipper = flippers[randi() % flippers.size()]
@@ -112,6 +112,7 @@ func select_player_image():
 	#var chars = c.characteristics
 	#print(str(chars.Char_Gender) + " " + str(chars.Char_HairColor) + " " + str(chars.Char_EyeColor))
 	#var image = images.pick_random()
-	Players[0]['characteristics'] = c.characteristics
-	Players[0]['image'] = image
-	Players[0]['playerRef'].set_image(image)
+	
+	player['characteristics'] = c.characteristics
+	player['image'] = image
+	player['playerRef'].set_image(image)
