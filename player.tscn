@@ -46,6 +46,8 @@ transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, -7.343
 target_position = Vector3(0, 0, -20)
 collide_with_areas = true
 
+[node name="EndScreen" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("9_we5x6")]
+
 [node name="QuestionUi" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("3_50ni0")]
 
 [node name="FirstPersonHud" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("3_1k8ml")]
@@ -113,7 +115,6 @@ text = "Your Turn"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_gnsx6")
-[node name="EndScreen" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("9_we5x6")]
 
 [node name="hands" parent="MeshInstance3D" instance=ExtResource("4_7qgi7")]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0.011425, -0.385483, -0.003613)

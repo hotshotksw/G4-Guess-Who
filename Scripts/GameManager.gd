@@ -25,20 +25,15 @@ func _ready():
 
 @rpc("authority")
 func start_game():
+	if Players.size() < 2:
+		print("Cannot start game. Add more players.")
+		return
 	current_turn = 1
-	for player in Players:
-		player['image'] = images.pick_random()
+	select_player_image()
 	advance_turn.rpc_id(current_turn)
 	Players[current_turn]['playerRef'].get_node("MeshInstance3D/Boy/Camera3D/FirstPersonHud/Turn").visible = true;
 	#Players[0]['playerRef'].isTurn = false
 	#Players[1]['playerRef'].isTurn = true
-	if Players.size() < 2:
-		print("Cannot start game. Add more players.")
-		return
-
-	select_player_image()
-
-	advance_turn()
 
 @rpc("authority")
 func add_player(name, id):
@@ -97,7 +92,6 @@ func end_game(winner_id: int, loser_id: int):
 
 	if winner and loser:
 		winner['playerRef'].rpc_id(winner_id, "set_win_screen")
-
 		loser['playerRef'].rpc_id(loser_id, "set_lose_screen")
 
 	else:
