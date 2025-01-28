@@ -78,8 +78,14 @@ func end_game(winner_id: int, loser_id: int):
 	var winner = get_player_by_id(winner_id)
 	var loser = get_player_by_id(loser_id)
 
-	winner['playerRef'].get_node('MeshInstance3D/Boy/Camera3D/EndScreen/Win').visible = true
-	loser['playerRef'].get_node('MeshInstance3D/Boy/Camera3D/EndScreen/Lose').visible = true
+	if winner and loser:
+		winner['playerRef'].rpc_id(winner_id, "set_win_screen")
+
+		loser['playerRef'].rpc_id(loser_id, "set_lose_screen")
+
+	else:
+		print("Error: Winner or loser not found.")
+
 
 func get_player_by_id(player_id):
 	for player in Players:

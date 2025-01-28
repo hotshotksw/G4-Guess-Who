@@ -56,6 +56,14 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.pressed:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+@rpc("any_peer", "call_local")
+func set_win_screen():
+	$MeshInstance3D/Boy/Camera3D/EndScreen/Win.visible = true
+
+@rpc("any_peer", "call_local")
+func set_lose_screen():
+	$MeshInstance3D/Boy/Camera3D/EndScreen/Lose.visible = true
+
 @rpc("any_peer")
 func set_image(image):
 	var char_image = get_node("MeshInstance3D/Boy/Camera3D/FirstPersonHud/CharImage") as TextureRect

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_60vx7"]
 [ext_resource type="PackedScene" uid="uid://cr1v14ao2hj" path="res://models/Boy.glb" id="2_fgqqv"]
 [ext_resource type="PackedScene" uid="uid://2eub3abg1ftp" path="res://UI/Scenes/FirstPersonHud.tscn" id="3_1k8ml"]
-[ext_resource type="PackedScene" uid="uid://c2i4jspd3pywh" path="res://UI/Scenes/QuestionUi.tscn" id="3_50ni0"]
+[ext_resource type="PackedScene" uid="uid://c2i4jspd3pywh" path="res://UI/Scenes/QuestionUI.tscn" id="3_50ni0"]
 [ext_resource type="PackedScene" uid="uid://dna756va7k8xd" path="res://models/hands.glb" id="4_7qgi7"]
 [ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="5_3oiaa"]
 [ext_resource type="PackedScene" uid="uid://dsr3qkex7en3i" path="res://models/feet.glb" id="5_27h26"]
@@ -26,15 +26,9 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath("MeshInstance3D/Boy:rotation")
 properties/1/spawn = true
 properties/1/replication_mode = 1
-properties/2/path = NodePath("MeshInstance3D/Boy/Camera3D/EndScreen/Win:visible")
+properties/2/path = NodePath(".:path")
 properties/2/spawn = true
 properties/2/replication_mode = 1
-properties/3/path = NodePath("MeshInstance3D/Boy/Camera3D/EndScreen/Lose:visible")
-properties/3/spawn = true
-properties/3/replication_mode = 1
-properties/4/path = NodePath(".:path")
-properties/4/spawn = true
-properties/4/replication_mode = 1
 
 [node name="Player" type="Node3D" groups=["Player"]]
 script = ExtResource("1_60vx7")
