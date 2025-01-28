@@ -1,4 +1,5 @@
 extends Node3D
+class_name Player
 
 @onready var camera = $MeshInstance3D/Boy/Camera3D as Camera3D
 @onready var head = $MeshInstance3D/Boy
