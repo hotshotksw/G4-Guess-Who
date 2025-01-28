@@ -76,6 +76,7 @@ func host_game():
 	print("Waiting for Players!")
 
 func _on_host_button_down() -> void:
+	$Feed.text = "Hosting Session"
 	AudioLoader.play_sound("save")
 	host_game()
 	SendPlayerInformation($LineEdit.text, multiplayer.get_unique_id())
@@ -83,6 +84,7 @@ func _on_host_button_down() -> void:
 
 
 func _on_join_button_down() -> void:
+	$Feed.text = "Joining Session"
 	AudioLoader.play_sound("btn")
 	peer = ENetMultiplayerPeer.new()
 	peer.create_client(Address, port)

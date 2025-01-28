@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2i4jspd3pywh"]
+[gd_scene load_steps=7 format=3 uid="uid://c2i4jspd3pywh"]
 
 [ext_resource type="Script" path="res://UI/Scripts/GameUI.gd" id="1_m1i8e"]
 [ext_resource type="Script" path="res://UI/Scripts/ask.gd" id="2_hylm8"]
 [ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="3_hncth"]
 [ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="4_dxt15"]
 [ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="5_eb7vn"]
+[ext_resource type="Texture2D" uid="uid://bgvxfj8j7ejdf" path="res://Assets/btn.png" id="6_mmlwd"]
 
 [node name="QuestionUi" type="Control"]
 layout_mode = 3
@@ -18,6 +19,7 @@ size_flags_vertical = 6
 script = ExtResource("1_m1i8e")
 
 [node name="Ask" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -86,7 +88,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 46.0
 offset_top = 229.0
-offset_right = 503.0
+offset_right = 466.0
 offset_bottom = 296.0
 theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
@@ -97,6 +99,14 @@ theme_override_fonts/font = ExtResource("5_eb7vn")
 theme_override_font_sizes/font_size = 24
 text = "Is your Character ..."
 vertical_alignment = 1
+script = ExtResource("1_m1i8e")
+
+[node name="Btn" type="Sprite2D" parent="Ask/Question"]
+visible = false
+show_behind_parent = true
+position = Vector2(318, 37)
+scale = Vector2(1.38281, 0.640625)
+texture = ExtResource("6_mmlwd")
 
 [node name="toggle" type="Control" parent="."]
 layout_mode = 1
@@ -139,5 +149,6 @@ vertical_alignment = 1
 
 [connection signal="item_selected" from="Ask/Topic" to="Ask/Topic" method="_on_item_selected"]
 [connection signal="item_selected" from="Ask/Topic/Filter" to="Ask/Topic" method="_on_filter_item_selected"]
-[connection signal="pressed" from="Ask/Ask_btn" to="Ask" method="_on_ask_btn_pressed"]
+[connection signal="button_down" from="Ask/Ask_btn" to="." method="_on_ask_btn_button_down"]
+[connection signal="button_up" from="Ask/Ask_btn" to="." method="_on_ask_btn_button_up"]
 [connection signal="pressed" from="toggle/Question_btn" to="." method="_on_question_btn_pressed"]

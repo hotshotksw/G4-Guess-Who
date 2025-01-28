@@ -79,10 +79,36 @@ theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 
 theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 50
 theme_override_fonts/font = ExtResource("8_fsuy2")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 41
 text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Turn" type="Label" parent="MeshInstance3D/Boy/Camera3D/FirstPersonHud"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -98.0
+offset_right = 147.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.831373, 0.0901961, 0.262745, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("8_fsuy2")
+theme_override_font_sizes/font_size = 39
+text = "Your Turn"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_gnsx6")
 
 [node name="hands" parent="MeshInstance3D" instance=ExtResource("4_7qgi7")]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0.011425, -0.385483, -0.003613)
@@ -96,3 +122,4 @@ delta_interval = 0.1
 replication_config = SubResource("SceneReplicationConfig_dhxxy")
 
 [connection signal="pressed" from="MeshInstance3D/Boy/Camera3D/FirstPersonHud/TextureButton" to="MeshInstance3D/Boy/Camera3D/QuestionUi" method="_on_texture_button_pressed"]
+[connection signal="property_list_changed" from="MeshInstance3D/Boy/Camera3D/FirstPersonHud/Turn" to="MeshInstance3D/Boy/Camera3D/QuestionUi" method="_on_turn_property_list_changed"]

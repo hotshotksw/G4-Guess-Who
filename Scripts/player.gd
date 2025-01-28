@@ -8,6 +8,7 @@ var x_sensitivity = 0.01 as float
 var y_sensitivity = 0.01 as float
 
 var usingUI = false
+var isTurn = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

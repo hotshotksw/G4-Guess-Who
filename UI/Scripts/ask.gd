@@ -47,6 +47,8 @@ func _item_change(items) -> void:
 
 func _on_filter_item_selected(index: int) -> void:
 	
+	#if(!GameManager.Players[GameManager.current_turn]['playerRef'].isTurn): return
+	
 	$"../Ask_btn".disabled = false;
 	
 	fltr = filter.get_item_text(index) + "."
