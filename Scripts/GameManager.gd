@@ -8,12 +8,22 @@ var answer = ""
 var isTurn = false
 
 func _ready():
-	images = [
-		preload("res://Assets/Characters/baldy.png"),
-		preload("res://Assets/Characters/bandage.png")
-	]
+	if images.size() != 0:
+		return
 
-@rpc("any_peer")
+	var dir = DirAccess.open("res://Assets/Characters/")
+
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+
+		while file_name != "":
+			images.append(str("res://Assets/Characters/" + file_name))
+			file_name = dir.get_next()
+
+		dir.list_dir_end()
+
+@rpc("authority")
 func start_game():
 	current_turn = 1
 	for player in Players:
@@ -22,25 +32,37 @@ func start_game():
 	Players[current_turn]['playerRef'].get_node("MeshInstance3D/Boy/Camera3D/FirstPersonHud/Turn").visible = true;
 	#Players[0]['playerRef'].isTurn = false
 	#Players[1]['playerRef'].isTurn = true
+	if Players.size() < 2:
+		print("Cannot start game. Add more players.")
+		return
 
+	select_player_image()
+
+	advance_turn()
+
+@rpc("authority")
 func add_player(name, id):
 	if Players.size() < 2:
-		var player_data = {"name": name, "id": id}
+		var player_data = {"name": name, "id": id, "playerRef": null}
 		Players.append(player_data)
 
 	else:
 		print("No more slots available for players.")
 
-# Need to add guess part of variable
-func player_guess(player_id: int, image: String):
-	if Players[current_turn]['id'] == player_id:
-		for player in Players:
-			if player['id'] != player_id:
-				if player['image'].load_path == image:
-					end_game(player_id, player['id'])
-				else:
-					end_game(player['id'], player_id)
+@rpc("authority")
+func player_guess(player_id: int, image: Image):
+	if Players[current_turn]['id'] != player_id:
+		return
 
+	for player in Players:
+		if player['id'] != player_id:
+			if player['playerRef'].path == image.resource_path:
+				end_game(player_id, player['id'])
+
+			else:
+				end_game(player['id'], player_id)
+
+@rpc("any_peer","call_local")
 func ask_question(key, value):
 	print(key)
 	print(value)
@@ -59,16 +81,43 @@ func advance_turn():
 	
 	
 	current_turn = (current_turn + 1) % 2
+
 	currentPlayer = Players[current_turn]['playerRef']
 	currentPlayer.get_node("MeshInstance3D/Boy/Camera3D/FirstPersonHud/Turn").text = "your turn"
 	#currentPlayer.isTurn = true
 
+	print("Current Turn: ", current_turn, " on ", multiplayer.get_unique_id())
+	print("Players Data: ", str(Players))
+
+
+@rpc("authority")
 func end_game(winner_id: int, loser_id: int):
-	print(get_player_by_id(winner_id)['name'] + " is the winner and " + get_player_by_id(loser_id)['name'] + " loses.")
-	pass
+	var winner = get_player_by_id(winner_id)
+	var loser = get_player_by_id(loser_id)
+
+	if winner and loser:
+		winner['playerRef'].rpc_id(winner_id, "set_win_screen")
+
+		loser['playerRef'].rpc_id(loser_id, "set_lose_screen")
+
+	else:
+		print("Error: Winner or loser not found.")
+
 
 func get_player_by_id(player_id):
 	for player in Players:
-		if player.id == player_id:
+		if player['id'] == player_id:
 			return player
 	return null
+
+func select_player_image():
+	var boards = get_tree().get_nodes_in_group("Board")
+	var flippers = boards[0].get_children()
+	var c : Flipper = flippers[randi() % flippers.size()]
+	var image = c.image
+	#var chars = c.characteristics
+	#print(str(chars.Char_Gender) + " " + str(chars.Char_HairColor) + " " + str(chars.Char_EyeColor))
+	#var image = images.pick_random()
+	Players[0]['characteristics'] = c.characteristics
+	Players[0]['image'] = image
+	Players[0]['playerRef'].set_image(image)

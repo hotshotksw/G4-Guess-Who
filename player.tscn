@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnepwp37n6wlm"]
+[gd_scene load_steps=15 format=3 uid="uid://cnepwp37n6wlm"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_60vx7"]
 [ext_resource type="PackedScene" uid="uid://cr1v14ao2hj" path="res://models/Boy.glb" id="2_fgqqv"]
 [ext_resource type="PackedScene" uid="uid://2eub3abg1ftp" path="res://UI/Scenes/FirstPersonHud.tscn" id="3_1k8ml"]
-[ext_resource type="PackedScene" uid="uid://c2i4jspd3pywh" path="res://UI/Scenes/QuestionUi.tscn" id="3_50ni0"]
+[ext_resource type="PackedScene" uid="uid://c2i4jspd3pywh" path="res://UI/Scenes/QuestionUI.tscn" id="3_50ni0"]
 [ext_resource type="PackedScene" uid="uid://dna756va7k8xd" path="res://models/hands.glb" id="4_7qgi7"]
 [ext_resource type="Texture2D" uid="uid://dj3rjks6wd3ls" path="res://Assets/Small_Round_btn.png" id="5_3oiaa"]
 [ext_resource type="PackedScene" uid="uid://dsr3qkex7en3i" path="res://models/feet.glb" id="5_27h26"]
 [ext_resource type="Texture2D" uid="uid://bkcrw2l11s3j6" path="res://Assets/Small_Round_btn_pressed.png" id="6_advpn"]
 [ext_resource type="Script" path="res://UI/Scripts/GameUI.gd" id="7_gnsx6"]
 [ext_resource type="FontFile" uid="uid://c1dw4wvypo661" path="res://Assets/AgentOrange.ttf" id="8_fsuy2"]
+[ext_resource type="PackedScene" uid="uid://to05n86tac38" path="res://UI/Scenes/EndScreen.tscn" id="9_we5x6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flo7i"]
 albedo_color = Color(1, 0.341176, 0.254902, 1)
@@ -25,6 +26,9 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath("MeshInstance3D/Boy:rotation")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+properties/2/path = NodePath(".:path")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
 [node name="Player" type="Node3D" groups=["Player"]]
 script = ExtResource("1_60vx7")
@@ -109,6 +113,7 @@ text = "Your Turn"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("7_gnsx6")
+[node name="EndScreen" parent="MeshInstance3D/Boy/Camera3D" instance=ExtResource("9_we5x6")]
 
 [node name="hands" parent="MeshInstance3D" instance=ExtResource("4_7qgi7")]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0.011425, -0.385483, -0.003613)
@@ -123,3 +128,5 @@ replication_config = SubResource("SceneReplicationConfig_dhxxy")
 
 [connection signal="pressed" from="MeshInstance3D/Boy/Camera3D/FirstPersonHud/TextureButton" to="MeshInstance3D/Boy/Camera3D/QuestionUi" method="_on_texture_button_pressed"]
 [connection signal="property_list_changed" from="MeshInstance3D/Boy/Camera3D/FirstPersonHud/Turn" to="MeshInstance3D/Boy/Camera3D/QuestionUi" method="_on_turn_property_list_changed"]
+
+[editable path="MeshInstance3D/Boy/Camera3D/EndScreen"]

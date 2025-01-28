@@ -10,6 +10,8 @@ var y_sensitivity = 0.01 as float
 var usingUI = false
 var isTurn = false
 
+@export var path:String
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(name).to_int())
@@ -54,6 +56,20 @@ func _input(event: InputEvent) -> void:
 	elif Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE and usingUI == false:
 		if event is InputEventMouseButton and event.pressed:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+@rpc("any_peer", "call_local")
+func set_win_screen():
+	$MeshInstance3D/Boy/Camera3D/EndScreen/Win.visible = true
+
+@rpc("any_peer", "call_local")
+func set_lose_screen():
+	$MeshInstance3D/Boy/Camera3D/EndScreen/Lose.visible = true
+
+@rpc("any_peer")
+func set_image(image):
+	var char_image = get_node("MeshInstance3D/Boy/Camera3D/FirstPersonHud/CharImage") as TextureRect
+	path = image.resource_path
+	char_image.texture = ImageTexture.create_from_image(image)
 
 # if $MultiplayerSynchronizer.get_multiplayer_authority() == multiplayer.get_unique_id()
 # -- if true, following code will occur

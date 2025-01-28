@@ -59,8 +59,8 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -7, -0.5, 0)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.35862, 0)
 
-[node name="Board_1" parent="." instance=ExtResource("6_g2hsw")]
+[node name="Board_1" parent="." groups=["Board"] instance=ExtResource("6_g2hsw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 1, 0)
 
-[node name="Board_0" parent="." instance=ExtResource("6_g2hsw")]
+[node name="Board_0" parent="." groups=["Board"] instance=ExtResource("6_g2hsw")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.25, 1, 0)
