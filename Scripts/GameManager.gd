@@ -27,18 +27,7 @@ func start_game():
 		print("Cannot start game. Add more players.")
 		return
 		
-	for i : int in 1:
-		var boards = get_tree().get_nodes_in_group("Board")
-		var flippers = boards[i].get_children()
-		var c : Flipper = flippers[randi() % flippers.size()]
-		var image = c.image
-		#var chars = c.characteristics
-		#print(str(chars.Char_Gender) + " " + str(chars.Char_HairColor) + " " + str(chars.Char_EyeColor))
-		#var image = images.pick_random()
-		Players[i]['characteristics'] = c.characteristics
-		Players[i]['image'] = image
-		Players[i]['playerRef'].set_image(image)
-		i += 1
+	select_player_image()
 
 	advance_turn()
 
@@ -89,3 +78,15 @@ func get_player_by_id(player_id):
 		if player['id'] == player_id:
 			return player
 	return null
+
+func select_player_image():
+	var boards = get_tree().get_nodes_in_group("Board")
+	var flippers = boards[0].get_children()
+	var c : Flipper = flippers[randi() % flippers.size()]
+	var image = c.image
+	#var chars = c.characteristics
+	#print(str(chars.Char_Gender) + " " + str(chars.Char_HairColor) + " " + str(chars.Char_EyeColor))
+	#var image = images.pick_random()
+	Players[0]['characteristics'] = c.characteristics
+	Players[0]['image'] = image
+	Players[0]['playerRef'].set_image(image)
